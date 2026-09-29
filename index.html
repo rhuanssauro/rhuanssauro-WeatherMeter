@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeatherMeter | Rhuanssauro Tech Inc</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand-lockup">
+      <a class="wordmark" href="#top" aria-label="Rhuanssauro Tech Inc">
+        <svg class="claw-mark" viewBox="0 0 34 34" width="28" height="28" aria-hidden="true">
+          <g fill="currentColor">
+            <path d="M7 3 C 11 12, 11 23, 5 33 C 2 23, 3 12, 7 3 Z" transform="rotate(-13 6 18)"></path>
+            <path d="M17 2 C 21 12, 21 23, 16 33 C 12 23, 13 12, 17 2 Z"></path>
+            <path d="M27 3 C 31 12, 31 23, 25 33 C 22 23, 23 12, 27 3 Z" transform="rotate(13 26 18)"></path>
+          </g>
+        </svg>
+        <span class="wordmark-text">
+          <span class="wordmark-name">RHUANSSAURO<span class="inc">Inc.</span></span>
+          <span class="wordmark-line">a datacenter in the jungle</span>
+        </span>
+      </a>
+      <p class="eyebrow">Satellite communications · weather and sea state</p>
+      <h1 id="top">WeatherMeter</h1>
+    </div>
+    <div class="top-meta">
+      <p>UTC <strong id="utc-clock">--:--:--</strong></p>
+      <p>Last fetch <strong id="fetched">not yet</strong></p>
+      <div class="theme" role="group" aria-label="Theme">
+        <button type="button" data-theme-choice="dark" aria-pressed="true">Dark</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        <button type="button" data-theme-choice="system" aria-pressed="false">System</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="panel" aria-labelledby="site-title">
+    <div class="section-heading">
+      <p class="eyebrow">Site</p>
+      <h2 id="site-title">Latitude and longitude</h2>
+    </div>
+    <form id="site-form" autocomplete="off">
+      <label class="span-2">Preset
+        <select id="preset">
+          <option value="offshore">Offshore default −20.04, −39.52</option>
+          <option value="custom">Custom coordinates</option>
+        </select>
+      </label>
+      <div class="span-2">
+        <label for="site-name">Place name</label>
+        <div class="lookup">
+          <input id="site-name" value="Offshore default" placeholder="City, port, or platform">
+          <button type="button" id="site-lookup">Find place</button>
+        </div>
+        <p id="lookup-status" class="help">South latitude and west longitude are negative. Find place uses the Open-Meteo geocoder and does not send a key.</p>
+        <ul id="lookup-results"></ul>
+      </div>
+      <label>Latitude (°)<input id="site-lat" inputmode="decimal" value="-20.04"></label>
+      <label>Longitude (°)<input id="site-lon" inputmode="decimal" value="-39.52"></label>
+      <label>Site class
+        <select id="site-class">
+          <option value="offshore">Offshore · sea grid cell</option>
+          <option value="onshore">Onshore · land weather cell</option>
+          <option value="nearest">Nearest grid cell</option>
+        </select>
+      </label>
+      <label>Timezone
+        <input id="timezone" list="zones" value="America/Sao_Paulo">
+      </label>
+      <div class="site-map span-2">
+        <p class="help">Confirm the pin before Load. The map follows these coordinates and does not fetch weather.</p>
+        <iframe
+          id="site-map"
+          title="Google Map of Offshore default"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+          src="https://www.google.com/maps/embed?origin=mfe&pb=!1m17!1m12!1m3!1d3689!2d-39.52!3d-20.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s-20.04,-39.52!5e0!3m2!1sen!2sbr"></iframe>
+        <p class="place-links">
+          <a id="gmaps-open" href="https://www.google.com/maps/search/?api=1&query=-20.04,-39.52" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+          <span class="muted"> · Map data <a href="https://developers.google.com/maps">Google Maps</a></span>
+        </p>
+      </div>
+      <datalist id="zones">
+        <option value="America/Sao_Paulo"></option>
+        <option value="America/Noronha"></option>
+        <option value="America/Manaus"></option>
+        <option value="UTC"></option>
+      </datalist>
+      <div class="actions span-2">
+        <button type="submit" id="load-btn" class="primary">Load 30 days</button>
+        <button type="button" id="export-csv" disabled>CSV</button>
+        <button type="button" id="export-pdf" disabled>PDF</button>
+      </div>
+    </form>
+    <p id="status" class="status" role="status">Load a site to fetch Open-Meteo. Nothing is requested until you do.</p>
+    <p id="stale" class="warn" hidden></p>
+    <p id="archive-note" class="warn" hidden></p>
+  </section>
+
+  <section class="panel" aria-labelledby="today-title">
+    <div class="section-heading">
+      <p class="eyebrow">Today</p>
+      <h2 id="today-title">At the pin</h2>
+    </div>
+    <p id="today-strip" class="today">No lookup yet.</p>
+    <p id="grid-note" class="help">The grid cell Open-Meteo actually used appears here after a load. It can sit a few kilometres from the pin.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="chart-title">
+    <div class="section-heading">
+      <p class="eyebrow">Window</p>
+      <h2 id="chart-title">Thirty days</h2>
+    </div>
+    <div id="charts" class="charts"></div>
+    <div class="table-tools">
+      <label>Show
+        <select id="filter">
+          <option value="all">All 30 days</option>
+          <option value="past">Past 15 days</option>
+          <option value="today">Today</option>
+          <option value="forecast">Today and the next 14 days</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sort">
+          <option value="date">Date</option>
+          <option value="rain">Rain</option>
+          <option value="cloud">Cloud</option>
+          <option value="wind">Gust</option>
+          <option value="swell">Swell</option>
+          <option value="wave">Total wave</option>
+        </select>
+      </label>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Period</th>
+            <th>Source</th>
+            <th>Min °C</th>
+            <th>Max °C</th>
+            <th>Humidity %</th>
+            <th>Precip mm</th>
+            <th>Rain mm</th>
+            <th>Cloud %</th>
+            <th>Wind kt</th>
+            <th>Gust kt</th>
+            <th>Wind from</th>
+            <th>Swell m</th>
+            <th>Swell s</th>
+            <th>Swell from</th>
+            <th>Wave m</th>
+            <th>Wave s</th>
+            <th>Weather</th>
+            <th>Conditions</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr><td colspan="19">Load a site to fill this table.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="help">Select a row for that day’s hours. A star on humidity means the daily mean was calculated from hourly values. Unavailable is a missing source value, not zero.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="hourly-title">
+    <div class="section-heading">
+      <p class="eyebrow">Selected day</p>
+      <h2 id="hourly-title">Hourly</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Temp °C</th>
+            <th>Humidity %</th>
+            <th>Dew point °C</th>
+            <th>Rain mm</th>
+            <th>Precip mm</th>
+            <th>Cloud %</th>
+            <th>Low cloud %</th>
+            <th>Wind kt</th>
+            <th>Gust kt</th>
+            <th>Swell m</th>
+            <th>Wave m</th>
+            <th>Weather</th>
+          </tr>
+        </thead>
+        <tbody id="hourly-body">
+          <tr><td colspan="13">Hourly rows appear after a load.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel about" aria-labelledby="about-title">
+    <div class="section-heading">
+      <p class="eyebrow">About the data</p>
+      <h2 id="about-title">What these numbers are</h2>
+    </div>
+    <p>Past days from the Forecast API are an archived forecast (<code>past_days</code>). Days from today forward are a forecast. When the Historical Weather API answers, those past days are labeled reanalysis. Reanalysis is a model reconstruction, not a sensor at the pin.</p>
+    <p>Swell height and total wave height come from the Marine API and stay in separate columns. The marine horizon is often shorter than 15 days. Empty future days stay empty.</p>
+    <p>The conditions column is an application classification for satellite-link weather, onshore and offshore. It is not fade in dB and it does not implement ITU-R P.618. Thresholds: daily rain ≥ 5 mm or an hourly rain ≥ 2 mm flags rain on the path; hourly rain ≥ 10 mm flags heavy rain; mean cloud ≥ 80% or a low, mid, or high cloud hour ≥ 90% flags extensive cloud; gusts ≥ 30 kt flag gusts; WMO codes 95, 96, and 99 flag thunderstorm. Offshore only, swell ≥ 2.0 m or total wave ≥ 2.5 m flags sea state that can move a floating or unstabilized antenna.</p>
+    <p>Use this page as a weather and sea-state view. Link margin, antenna pointing, and navigation decisions stay with the operator and the proper tools.</p>
+    <p>Weather data by <a href="https://open-meteo.com/">Open-Meteo.com</a>. Licence <a href="https://open-meteo.com/en/licence">CC BY 4.0</a>. Free-tier terms: <a href="https://open-meteo.com/en/terms">non-commercial use</a>, no API key, under 10,000 calls a day.</p>
+  </section>
+  <footer class="brand-bar">
+    <div class="brand-signature" role="img" aria-label="Rhuanssauro Tech Inc, a datacenter in the jungle">
+      <span class="brand-signature-name">
+        <svg class="claw-mark" viewBox="0 0 34 34" width="20" height="20" aria-hidden="true">
+          <g fill="currentColor">
+            <path d="M7 3 C 11 12, 11 23, 5 33 C 2 23, 3 12, 7 3 Z" transform="rotate(-13 6 18)"></path>
+            <path d="M17 2 C 21 12, 21 23, 16 33 C 12 23, 13 12, 17 2 Z"></path>
+            <path d="M27 3 C 31 12, 31 23, 25 33 C 22 23, 23 12, 27 3 Z" transform="rotate(13 26 18)"></path>
+          </g>
+        </svg>
+        <strong>Rhuanssauro Tech Inc</strong>
+      </span>
+      <small>a datacenter in the jungle</small>
+    </div>
+  </footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

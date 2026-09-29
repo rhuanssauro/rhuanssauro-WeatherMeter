@@ -1,0 +1,18 @@
+[Unit]
+Description=WeatherMeter Open-Meteo page
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=weathermeter
+Group=weathermeter
+WorkingDirectory=/opt/weathermeter
+ExecStart=/usr/bin/python3 /opt/weathermeter/serve.py --bind 0.0.0.0 --port 8766 --expose
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

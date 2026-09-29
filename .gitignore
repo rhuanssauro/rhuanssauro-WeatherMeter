@@ -1,0 +1,30 @@
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+node_modules/
+*.local
+.DS_Store
+.claude/
+.cursor/
+.gemini/
+.grok/
+
+# Local agent context. Not part of the app.
+/AGENTS.md
+/GEMINI.md
+/.mcp.json
+/opencode.json
+/.ignore
+/prompt-*.md
+
+# Local knowledge-graph dump. Not part of the app.
+/graphify-out/
+
+# Loop notes for this checkout. Not part of the app.
+/STATE.md
+
+# Deploy secrets, if a later setup needs them.
+.env
+.env.*
+*.pem
+id_rsa
+id_ed25519

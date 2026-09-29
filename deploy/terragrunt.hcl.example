@@ -1,0 +1,47 @@
+# Example guest for a Proxmox LXC module you already use.
+# Copy it beside your other guests and point `source` at that module.
+# Export CT_WEATHERMETER_ID, CT_WEATHERMETER_NODE, CT_WEATHERMETER_IP,
+# and GATEWAY_IP from your own inventory. Do not write an address in this file.
+# Match the include style to the Terragrunt version you run.
+# This file is an example. It is not applied from this repository.
+
+include "root" {
+  path = find_in_parent_folders()
+}
+
+terraform {
+  source = "${get_parent_terragrunt_dir()}/modules/proxmox-lxc"
+}
+
+inputs = {
+  hostname     = "weathermeter"
+  container_id = tonumber(get_env("CT_WEATHERMETER_ID"))
+  description  = "Personal Open-Meteo page"
+  node_name    = get_env("CT_WEATHERMETER_NODE")
+
+  cpu_cores   = 1
+  memory      = 512
+  swap        = 0
+  rootfs_size = 4
+
+  os_template = "local:vztmpl/debian-12-standard_12.2-1_amd64.tar.zst"
+  os_type     = "debian"
+
+  network_interfaces = [{
+    name     = "eth0"
+    bridge   = get_env("NETWORK_BRIDGE", "vmbr0")
+    vlan_id  = tonumber(get_env("VLAN_MAIN"))
+    firewall = true
+  }]
+
+  ip_configs = [{
+    ipv4_address = "${get_env("CT_WEATHERMETER_IP")}/24"
+    ipv4_gateway = get_env("GATEWAY_IP")
+  }]
+
+  unprivileged  = true
+  start_on_boot = true
+  nesting       = false
+
+  tags = ["terraform", "weathermeter"]
+}

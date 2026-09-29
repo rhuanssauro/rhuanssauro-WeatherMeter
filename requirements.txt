@@ -1,0 +1,6 @@
+# WeatherMeter server
+# Python 3.9 or newer. serve.py uses only the standard library.
+# There are no third-party Python packages to install.
+#
+# The TypeScript toolchain is separate. See package.json:
+#   typescript 5.9.2 (devDependency)

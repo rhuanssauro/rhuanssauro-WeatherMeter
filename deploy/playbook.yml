@@ -1,0 +1,70 @@
+---
+- name: Serve WeatherMeter on a Linux host
+  hosts: all
+  become: true
+  vars:
+    app_root: /opt/weathermeter
+    app_user: weathermeter
+
+  tasks:
+    - name: Install Python
+      ansible.builtin.apt:
+        name: python3
+        state: present
+        update_cache: true
+
+    - name: Create the service account
+      ansible.builtin.user:
+        name: "{{ app_user }}"
+        system: true
+        shell: /usr/sbin/nologin
+        create_home: false
+
+    - name: Create the app directory
+      ansible.builtin.file:
+        path: "{{ app_root }}/{{ item }}"
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: "0755"
+      loop:
+        - ""
+        - css
+        - js
+
+    - name: Copy the page
+      ansible.builtin.copy:
+        src: "{{ playbook_dir }}/../{{ item }}"
+        dest: "{{ app_root }}/{{ item }}"
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: "0644"
+      loop:
+        - index.html
+        - serve.py
+        - css/
+        - js/
+      notify: Restart WeatherMeter
+
+    - name: Install the systemd unit
+      ansible.builtin.copy:
+        src: "{{ playbook_dir }}/weathermeter.service"
+        dest: /etc/systemd/system/weathermeter.service
+        owner: root
+        group: root
+        mode: "0644"
+      notify: Restart WeatherMeter
+
+    - name: Enable the page at boot
+      ansible.builtin.systemd:
+        name: weathermeter
+        enabled: true
+        daemon_reload: true
+        state: started
+
+  handlers:
+    - name: Restart WeatherMeter
+      ansible.builtin.systemd:
+        name: weathermeter
+        daemon_reload: true
+        state: restarted
