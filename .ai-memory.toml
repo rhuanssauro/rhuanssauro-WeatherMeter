@@ -1,6 +1,6 @@
 # Own memory marker. The closest .ai-memory.toml wins, so sessions
 # started in this tree no longer use the parent marker at
-# /Users/rhuann/projects/personal/Github-rhuan/.ai-memory.toml.
+# ~/projects/personal/Github-rhuan/.ai-memory.toml.
 # Recall stays on this project. Cross-project recall is off.
 workspace = "github-rhuan"
 project_strategy = "repo-root"
