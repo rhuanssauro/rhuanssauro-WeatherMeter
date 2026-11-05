@@ -3,6 +3,7 @@
 # ~/projects/personal/Github-rhuan/.ai-memory.toml.
 # Recall stays on this project. Cross-project recall is off.
 workspace = "github-rhuan"
+project = "rhuanssauro-WeatherMeter"
 project_strategy = "repo-root"
 
 [recall]
