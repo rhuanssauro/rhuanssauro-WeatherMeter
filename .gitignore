@@ -13,6 +13,7 @@ node_modules/
 /GEMINI.md
 /.mcp.json
 /opencode.json
+/.ai-memory.toml
 /.ignore
 /prompt-*.md
 

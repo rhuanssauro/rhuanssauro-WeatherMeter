@@ -57,6 +57,36 @@ npm test
 
 An optional Linux host is described in [instructions/run-and-test.md](instructions/run-and-test.md).
 
+## Deploy (static hosting)
+
+WeatherMeter is a fully static, client-side page. There is no server, no auth flow, no database, and no secret: the browser calls Open-Meteo directly, so nothing sensitive is ever sent to a host you run. Host the `index.html`, `css/`, `js/`, and `docs/` files on any static host (GitHub Pages, a CDN, or an object store with a website endpoint) over HTTPS.
+
+Recommended response headers for the live page:
+
+```http
+Content-Security-Policy: default-src 'self';
+  script-src 'self';
+  style-src 'self';
+  img-src 'self' data:;
+  connect-src https://api.open-meteo.com https://marine-api.open-meteo.com
+              https://archive-api.open-meteo.com https://geocoding-api.open-meteo.com;
+  frame-src https://www.google.com;
+  object-src 'none';
+  base-uri 'self';
+  form-action 'none';
+  frame-ancestors 'none';
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: no-referrer
+```
+
+- `connect-src` lists only the four Open-Meteo hosts used for forecast, marine, archive, and geocoding. All are public, unauthenticated, and carry no key.
+- `frame-src https://www.google.com` covers the Google Maps embed iframe for the site pin.
+- The page has no inline scripts or inline styles, so `script-src 'self'` and `style-src 'self'` need no `unsafe-inline`.
+- Keep the Open-Meteo attribution (CC BY 4.0, non-commercial terms) on any export or copy of the data, as in the page footer.
+
+Do not add an API key or secret to the repo; none is needed. `serve.py` is for local preview only (loopback by default) and is not the production host.
+
 ## License
 
 [MIT](LICENSE).
