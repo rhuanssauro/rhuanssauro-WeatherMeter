@@ -1,0 +1,621 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-17T18:25:00Z",
+  "files": {
+    "README.md": {
+      "overview": "Contract for the page. Tour step 1. One site, a 30-day window, CSV or PDF after a load. Flags are not a link budget and not a navigation aid.",
+      "sections": [
+        {
+          "title": "What a load covers",
+          "lineRange": [
+            1,
+            28
+          ],
+          "explanation": "States the window: 15 days before today and today through the next 14 days. The page opens on latitude -20.04, longitude -39.52, times in America/Sao_Paulo. Nothing is fetched until Load 30 days. Missing values stay Unavailable.",
+          "tourOrder": 1
+        },
+        {
+          "title": "Sources and how to run",
+          "lineRange": [
+            30,
+            92
+          ],
+          "explanation": "Names the Open-Meteo forecast, archive, and marine hosts. Run is the local server. Deploy is static hosting. The license section closes the file.",
+          "tourOrder": 1
+        }
+      ]
+    },
+    "index.html": {
+      "overview": "Dashboard shell. Tour step 2. The form holds the site. Export controls stay inactive until a load finishes.",
+      "sections": [
+        {
+          "title": "Header clock",
+          "lineRange": [
+            1,
+            37
+          ],
+          "explanation": "The header shows WeatherMeter, a UTC clock, and a last-fetch stamp that starts as not yet. That stamp is the visible proof a load has not happened.",
+          "tourOrder": 2
+        },
+        {
+          "title": "Site form",
+          "lineRange": [
+            39,
+            85
+          ],
+          "explanation": "The form defaults to the offshore example, latitude -20.04 and longitude -39.52, timezone America/Sao_Paulo. Find place looks up a name. South and west are negative. The map link uses the same coordinates.",
+          "tourOrder": 2
+        },
+        {
+          "title": "Rest of the page",
+          "lineRange": [
+            86,
+            229
+          ],
+          "explanation": "The remainder holds the load button, the charts, and the daily table. Those regions stay empty until the page script fills them after a successful fetch.",
+          "tourOrder": 2
+        }
+      ]
+    },
+    "serve.py": {
+      "overview": "Static server. Tour step 2. Standard library only. It binds to loopback unless --expose is passed, and it refuses to serve .git.",
+      "sections": [
+        {
+          "title": "Git path block",
+          "lineRange": [
+            1,
+            28
+          ],
+          "explanation": "Handler extends SimpleHTTPRequestHandler. GET and HEAD that start with /.git return 404 before the parent handler runs. Query strings are stripped before that check.",
+          "tourOrder": 2
+        },
+        {
+          "title": "Bind policy",
+          "lineRange": [
+            31,
+            54
+          ],
+          "explanation": "Default bind is 127.0.0.1 and default port is 8766. A non-loopback bind without --expose is a parser error. The process serves until KeyboardInterrupt.",
+          "tourOrder": 2
+        }
+      ]
+    },
+    "requirements.txt": {
+      "overview": "Python note. Tour step 2. There is nothing to pip install. serve.py uses the standard library. TypeScript 5.9.2 is a separate toolchain in package.json.",
+      "sections": [
+        {
+          "title": "No pip packages",
+          "lineRange": [
+            1,
+            3
+          ],
+          "explanation": "Says Python 3.9 or newer and that serve.py uses only the standard library. There are no third-party packages.",
+          "tourOrder": 2
+        },
+        {
+          "title": "TypeScript is separate",
+          "lineRange": [
+            4,
+            6
+          ],
+          "explanation": "Points at package.json for the TypeScript 5.9.2 dev dependency. That toolchain is not installed by this file.",
+          "tourOrder": 2
+        }
+      ]
+    },
+    "src/window.ts": {
+      "overview": "Date window. Tour step 3. Builds the 30 calendar days around today in a named timezone, and labels each day past, today, or future.",
+      "sections": [
+        {
+          "title": "Calendar date helpers",
+          "lineRange": [
+            1,
+            24
+          ],
+          "explanation": "formatYmd uses Intl with the given timezone, not the host local zone. addCalendarDays shifts a YYYY-MM-DD string with UTC date math so a DST change cannot skip a day.",
+          "tourOrder": 3
+        },
+        {
+          "title": "The thirty days",
+          "lineRange": [
+            26,
+            37
+          ],
+          "explanation": "windowFor walks offsets from -15 through 14 inclusive, which is 30 dates. periodOf compares the date string to today.",
+          "tourOrder": 3
+        }
+      ]
+    },
+    "src/openmeteo.ts": {
+      "overview": "Open-Meteo client. Tour step 3. Builds forecast, marine, archive, and geocode URLs, and chooses sea, land, or nearest cells.",
+      "sections": [
+        {
+          "title": "Hosts and field lists",
+          "lineRange": [
+            1,
+            74
+          ],
+          "explanation": "Four origins: forecast, marine, archive, and geocoding. The daily and hourly field lists are the columns the rest of the page expects. Changing a name here changes the aggregate keys.",
+          "tourOrder": 3
+        },
+        {
+          "title": "Cell and URL builders",
+          "lineRange": [
+            76,
+            165
+          ],
+          "explanation": "cellSelection returns sea, land, or nearest from the site class. marineCellSelection stays on sea even for an onshore site, which matches the README: swell still comes from the sea cell. The URL builders only assemble query strings.",
+          "tourOrder": 3
+        },
+        {
+          "title": "Fetch helpers",
+          "lineRange": [
+            166,
+            300
+          ],
+          "explanation": "sleep and errorText support the request path. Failures stay as errors. This file does not fill a missing series from another host.",
+          "tourOrder": 3
+        }
+      ]
+    },
+    "src/aggregate.ts": {
+      "overview": "Joins the four series into one day table. Tour step 3. A missing archive or marine response stays missing. It is not copied from the forecast.",
+      "sections": [
+        {
+          "title": "Index helpers",
+          "lineRange": [
+            1,
+            68
+          ],
+          "explanation": "indexDaily and indexHours key rows by date. val returns null for a missing or non-finite number. hasCore checks the temperature, rain, and cloud fields the table cannot do without.",
+          "tourOrder": 3
+        },
+        {
+          "title": "Assemble one window",
+          "lineRange": [
+            70,
+            262
+          ],
+          "explanation": "assemble indexes forecast daily and hourly always. Archive and marine maps are built only when that host answered ok. Days the archive missed keep a null, and the UI later prints Unavailable.",
+          "tourOrder": 3
+        }
+      ]
+    },
+    "src/satcom.ts": {
+      "overview": "Condition flags. Tour step 4. Rain, cloud, gusts, thunderstorm, and an offshore sea-state line. Thresholds are named constants. A null input does not trip a flag.",
+      "sections": [
+        {
+          "title": "Threshold constants",
+          "lineRange": [
+            1,
+            28
+          ],
+          "explanation": "Rain is 5 mm daily or 2 mm in an hour. Heavy rain is 10 mm in an hour. Cloud is 80 percent mean or 90 percent in a layer. Gusts are 30 kt. Swell is 2 m and wave is 2.5 m. Thunder codes are 95, 96, and 99.",
+          "tourOrder": 4
+        },
+        {
+          "title": "Flag rules",
+          "lineRange": [
+            30,
+            62
+          ],
+          "explanation": "maxOf ignores nulls. conditionFlags pushes a label only when a finite value crosses a threshold. The sea-state sentence is added only when site is offshore. An onshore site with a large swell gets no sea-state flag.",
+          "tourOrder": 4
+        }
+      ]
+    },
+    "src/csv.ts": {
+      "overview": "CSV export of one loaded snapshot. Tour step 4. The header row is fixed. A null cell stays empty rather than becoming zero.",
+      "sections": [
+        {
+          "title": "Headers and cells",
+          "lineRange": [
+            1,
+            130
+          ],
+          "explanation": "HEADERS names every column. cell formats a number to a digit count, and dailyValues and hourlyValues walk one row into that column order.",
+          "tourOrder": 4
+        },
+        {
+          "title": "File body",
+          "lineRange": [
+            132,
+            171
+          ],
+          "explanation": "exportBasename uses latitude and longitude to four decimals. toCsv writes comment lines for the grids, then the header, then one line per row. A stale snapshot is marked in those comments.",
+          "tourOrder": 4
+        }
+      ]
+    },
+    "src/app.ts": {
+      "overview": "Page controller. Tour step 4. Reads the form, calls the load, and writes charts and the table. It also remembers the last form in localStorage.",
+      "sections": [
+        {
+          "title": "Form read and save",
+          "lineRange": [
+            1,
+            104
+          ],
+          "explanation": "Storage keys are weathermeter:last, weathermeter:form, and weathermeter:theme. readForm parses latitude and longitude and returns an error string instead of throwing on a bad field. restoreForm accepts only the offshore and custom presets.",
+          "tourOrder": 4
+        },
+        {
+          "title": "Map refresh",
+          "lineRange": [
+            106,
+            120
+          ],
+          "explanation": "refreshMap parses the same lat and lon fields and updates the iframe and the open-in-maps link. A coordinate that fails to parse does not move the map.",
+          "tourOrder": 4
+        },
+        {
+          "title": "Load and render",
+          "lineRange": [
+            121,
+            510
+          ],
+          "explanation": "The rest of the file runs Load 30 days: it calls the Open-Meteo helpers, assembles the snapshot, then fills status, charts, and the table. Export stays off until that snapshot exists.",
+          "tourOrder": 4
+        }
+      ]
+    },
+    "js/app.js": {
+      "overview": "Browser emit of app.ts. Tour step 5. The page loads this file, not the TypeScript. Behavior should match src/app.ts. If it does not, the emit is stale.",
+      "sections": [
+        {
+          "title": "Same form keys",
+          "lineRange": [
+            1,
+            80
+          ],
+          "explanation": "CACHE_KEY, FORM_KEY, and THEME_KEY match the TypeScript. readForm and restoreForm use the same preset check. This is the file the browser executes.",
+          "tourOrder": 5
+        },
+        {
+          "title": "Map and the rest",
+          "lineRange": [
+            81,
+            505
+          ],
+          "explanation": "refreshMap and the load handler mirror src/app.ts. Edit the TypeScript and re-emit. Do not patch this file alone or the next build will overwrite it.",
+          "tourOrder": 5
+        }
+      ]
+    },
+    "js/openmeteo.js": {
+      "overview": "Browser emit of openmeteo.ts. Tour step 5. The four Open-Meteo origins and the URL builders are the same names as the TypeScript.",
+      "sections": [
+        {
+          "title": "Origins and fields",
+          "lineRange": [
+            1,
+            78
+          ],
+          "explanation": "Forecast, marine, archive, and geocode origins, plus cellSelection. The field arrays are what the aggregate keys against.",
+          "tourOrder": 5
+        },
+        {
+          "title": "URL builders",
+          "lineRange": [
+            79,
+            268
+          ],
+          "explanation": "forecastUrl, marineUrl, archiveUrl, and geocodeUrl build query strings. sleep and errorText support retries. This file does not invent a value when a host fails.",
+          "tourOrder": 5
+        }
+      ]
+    },
+    "js/aggregate.js": {
+      "overview": "Browser emit of aggregate.ts. Tour step 5. assemble joins forecast, archive, and marine. A host that did not answer leaves nulls.",
+      "sections": [
+        {
+          "title": "Row indexes",
+          "lineRange": [
+            1,
+            65
+          ],
+          "explanation": "indexDaily, indexHours, and hourMap key the series. val returns null for a bad number. aside formats an archived row and prints Unavailable for a null.",
+          "tourOrder": 5
+        },
+        {
+          "title": "Assemble",
+          "lineRange": [
+            66,
+            248
+          ],
+          "explanation": "assemble is the export the page calls after the fetches. Archive and marine contribute only when their response was ok.",
+          "tourOrder": 5
+        }
+      ]
+    },
+    "tests/aggregate.test.js": {
+      "overview": "node:test for assemble. Tour step 6. A fixed clock of 2026-09-29 builds a window, then checks past, today, archive, and marine rows.",
+      "sections": [
+        {
+          "title": "Fixture builders",
+          "lineRange": [
+            1,
+            74
+          ],
+          "explanation": "now is a fixed UTC instant. series and endpoint build the daily and hourly shapes assemble expects. baseInput fills a zero weather grid so each test overrides one host.",
+          "tourOrder": 6
+        },
+        {
+          "title": "Past, today, marine",
+          "lineRange": [
+            75,
+            147
+          ],
+          "explanation": "The first snapshot checks the past day and today. A later snapshot feeds an archive only for dates before 2026-09-29. Offshore and onshore snapshots check that marine data follows the site class.",
+          "tourOrder": 6
+        }
+      ]
+    },
+    "tests/satcom.test.js": {
+      "overview": "node:test for the flag thresholds. Tour step 6. One helper builds a quiet offshore day. Each assertion crosses exactly one threshold.",
+      "sections": [
+        {
+          "title": "Quiet input",
+          "lineRange": [
+            1,
+            21
+          ],
+          "explanation": "input() returns a calm offshore day: no rain, low cloud, light gust, small swell. overrides replace one field per assertion.",
+          "tourOrder": 6
+        },
+        {
+          "title": "One threshold each",
+          "lineRange": [
+            23,
+            34
+          ],
+          "explanation": "Rain at 5 mm daily or 2 mm hourly flags Rain on the path. 10 mm hourly also flags Heavy rain. Cloud 80, a low layer at 90, gust 30, and code 95 each add their label. Swell of 2 m flags sea state only offshore. An onshore site with a large swell does not. An untouched input returns no flags.",
+          "tourOrder": 6
+        }
+      ]
+    },
+    "package.json": {
+      "overview": "Manifest. Tour step 6. Version 1.0.0. build is tsc. test is tsc then node --test. The only dev dependency is TypeScript 5.9.2.",
+      "sections": [
+        {
+          "title": "Name and scripts",
+          "lineRange": [
+            1,
+            9
+          ],
+          "explanation": "Package name rhuanssauro-weathermeter, MIT, type module. test compiles first, so a type error fails the suite before node:test runs.",
+          "tourOrder": 6
+        },
+        {
+          "title": "TypeScript pin",
+          "lineRange": [
+            10,
+            13
+          ],
+          "explanation": "typescript is pinned at 5.9.2. There is no runtime dependency. The page is the emitted JavaScript plus the Python server.",
+          "tourOrder": 6
+        }
+      ]
+    },
+    "src/charts.ts": {
+      "overview": "Draws the charts shown after a successful load.",
+      "sections": []
+    },
+    "src/format.ts": {
+      "overview": "Formats numbers, times in America/Sao_Paulo, and the Unavailable label.",
+      "sections": []
+    },
+    "src/map.ts": {
+      "overview": "Draws the site map. Export stays off until Load.",
+      "sections": []
+    },
+    "src/report.ts": {
+      "overview": "Source file report.ts (typescript, 123 lines). It defines 3 extracted functions.",
+      "sections": []
+    },
+    "src/types.ts": {
+      "overview": "Shared types for the weather, marine, and flag records.",
+      "sections": []
+    },
+    "js/charts.js": {
+      "overview": "Source file charts.js (javascript, 34 lines). It defines 1 extracted function.",
+      "sections": []
+    },
+    "js/csv.js": {
+      "overview": "Source file csv.js (javascript, 166 lines). It defines 5 extracted functions.",
+      "sections": []
+    },
+    "js/format.js": {
+      "overview": "Source file format.js (javascript, 90 lines). It defines 8 extracted functions.",
+      "sections": []
+    },
+    "js/map.js": {
+      "overview": "Source file map.js (javascript, 30 lines). It defines 3 extracted functions.",
+      "sections": []
+    },
+    "js/report.js": {
+      "overview": "Source file report.js (javascript, 119 lines). It defines 3 extracted functions.",
+      "sections": []
+    },
+    "tests/map.test.js": {
+      "overview": "Source file map.test.js (javascript, 45 lines).",
+      "sections": []
+    },
+    "tests/openmeteo.test.js": {
+      "overview": "Source file openmeteo.test.js (javascript, 105 lines).",
+      "sections": []
+    },
+    "js/satcom.js": {
+      "overview": "Source file satcom.js (javascript, 43 lines). It defines 2 extracted functions.",
+      "sections": []
+    },
+    "js/window.js": {
+      "overview": "Source file window.js (javascript, 36 lines). It defines 4 extracted functions.",
+      "sections": []
+    },
+    "tests/export.test.js": {
+      "overview": "Source file export.test.js (javascript, 92 lines). It defines 1 extracted function.",
+      "sections": []
+    },
+    "tests/window.test.js": {
+      "overview": "Source file window.test.js (javascript, 28 lines).",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/scripts/clean_text.py": {
+      "overview": "Source file clean_text.py (python, 98 lines). It defines 1 extracted function.",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/scripts/common.py": {
+      "overview": "Source file common.py (python, 565 lines). It defines 21 extracted functions.",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/scripts/inspect_text.py": {
+      "overview": "Source file inspect_text.py (python, 137 lines). It defines 1 extracted function.",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py": {
+      "overview": "Source file score_stylometry.py (python, 538 lines). It defines 9 extracted functions.",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/scripts/text_unicode.py": {
+      "overview": "Source file text_unicode.py (python, 730 lines). It defines 24 extracted functions.",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/references/detectors.md": {
+      "overview": "Documentation file detectors.md (markdown, 156 lines).",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/references/responsible-use.md": {
+      "overview": "Documentation file responsible-use.md (markdown, 7 lines).",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/references/watermark-notes.md": {
+      "overview": "Documentation file watermark-notes.md (markdown, 20 lines).",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/references/writing-in-your-voice.md": {
+      "overview": "Documentation file writing-in-your-voice.md (markdown, 55 lines).",
+      "sections": []
+    },
+    ".agents/skills/remove-ai-marks/references/ethics.md": {
+      "overview": "Documentation file ethics.md (markdown, 32 lines).",
+      "sections": []
+    },
+    ".agents/skills/remove-ai-marks/references/how-claude-marks.md": {
+      "overview": "Documentation file how-claude-marks.md (markdown, 35 lines).",
+      "sections": []
+    },
+    ".agents/skills/remove-ai-marks/references/mark-classes.md": {
+      "overview": "Documentation file mark-classes.md (markdown, 73 lines).",
+      "sections": []
+    },
+    ".agents/skills/remove-ai-marks/references/markdiffusion.md": {
+      "overview": "Documentation file markdiffusion.md (markdown, 80 lines).",
+      "sections": []
+    },
+    ".agents/skills/remove-ai-marks/references/removal-matrix.md": {
+      "overview": "Documentation file removal-matrix.md (markdown, 57 lines).",
+      "sections": []
+    },
+    ".agents/skills/remove-ai-marks/references/vendor-notes.md": {
+      "overview": "Documentation file vendor-notes.md (markdown, 69 lines).",
+      "sections": []
+    },
+    "tsconfig.json": {
+      "overview": "TypeScript compiler settings that emit the js/ modules from src/.",
+      "sections": []
+    },
+    "instructions/README.md": {
+      "overview": "Documentation file README.md (markdown, 9 lines).",
+      "sections": []
+    },
+    "instructions/open-meteo.md": {
+      "overview": "Documentation file open-meteo.md (markdown, 44 lines).",
+      "sections": []
+    },
+    "instructions/run-and-test.md": {
+      "overview": "Documentation file run-and-test.md (markdown, 41 lines).",
+      "sections": []
+    },
+    "instructions/using-the-page.md": {
+      "overview": "Documentation file using-the-page.md (markdown, 78 lines).",
+      "sections": []
+    },
+    "instructions/worktree-lifecycle.md": {
+      "overview": "Documentation file worktree-lifecycle.md (markdown, 8 lines).",
+      "sections": []
+    },
+    ".agents/skills/clean-user-facing-text/SKILL.md": {
+      "overview": "Documentation file SKILL.md (markdown, 191 lines).",
+      "sections": []
+    },
+    ".agents/skills/graft/SKILL.md": {
+      "overview": "Documentation file SKILL.md (markdown, 156 lines).",
+      "sections": []
+    },
+    ".agents/skills/remove-ai-marks/SKILL.md": {
+      "overview": "Documentation file SKILL.md (markdown, 379 lines).",
+      "sections": []
+    },
+    ".codex/config.toml": {
+      "overview": "Configuration file config.toml (toml, 3 lines).",
+      "sections": []
+    },
+    ".codex/hooks.json": {
+      "overview": "Configuration file hooks.json (json, 59 lines).",
+      "sections": []
+    },
+    ".github/copilot-instructions.md": {
+      "overview": "Documentation file copilot-instructions.md (markdown, 41 lines).",
+      "sections": []
+    },
+    ".trail/README.md": {
+      "overview": "Documentation file README.md (markdown, 16 lines).",
+      "sections": []
+    },
+    ".trail/hook.cjs": {
+      "overview": "Source file hook.cjs (javascript, 216 lines). It defines 12 extracted functions.",
+      "sections": []
+    },
+    ".trail/learnings/2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md": {
+      "overview": "Documentation file 2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md (markdown, 32 lines).",
+      "sections": []
+    },
+    ".trail/learnings/2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md": {
+      "overview": "Documentation file 2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md (markdown, 36 lines).",
+      "sections": []
+    },
+    ".ua/class.txt": {
+      "overview": "Size-class marker for this Understand Anything run. This repo is class full.",
+      "sections": []
+    },
+    ".ua/config.json": {
+      "overview": "Understand Anything config. Output language for this run is English.",
+      "sections": []
+    },
+    "css/app.css": {
+      "overview": "Dashboard stylesheet.",
+      "sections": []
+    },
+    "deploy/playbook.yml": {
+      "overview": "Configuration file playbook.yml (yaml, 70 lines).",
+      "sections": []
+    },
+    "deploy/terragrunt.hcl.example": {
+      "overview": "Source file terragrunt.hcl.example (example, 47 lines).",
+      "sections": []
+    },
+    "deploy/weathermeter.service": {
+      "overview": "Source file weathermeter.service (service, 18 lines).",
+      "sections": []
+    },
+    "js/types.js": {
+      "overview": "Source file types.js (javascript, 1 lines).",
+      "sections": []
+    },
+    "tests/public-surface.test.js": {
+      "overview": "Source file public-surface.test.js (javascript, 87 lines).",
+      "sections": []
+    }
+  }
+}
