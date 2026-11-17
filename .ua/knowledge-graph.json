@@ -1,0 +1,6032 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "rhuanssauro-WeatherMeter",
+    "description": "A personal page that loads weather and sea state for one latitude and longitude, covering 15 days before today through the next 14 days, and can save that window as CSV or PDF. Condition flags are not a link budget and not a navigation aid.",
+    "languages": [
+      "javascript",
+      "typescript",
+      "python",
+      "example",
+      "service"
+    ],
+    "frameworks": [
+      "TypeScript",
+      "Python standard library HTTP server"
+    ],
+    "analyzedAt": "2026-11-17T18:20:00Z",
+    "gitCommitHash": "2d73dd2daabbe6ffc022bb575bb2ef2b9768bdbf"
+  },
+  "nodes": [
+    {
+      "id": "file:src/aggregate.ts",
+      "type": "file",
+      "name": "aggregate.ts",
+      "filePath": "src/aggregate.ts",
+      "summary": "Joins archived forecast, reanalysis, forecast, and marine series. A missing value stays missing.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file",
+        "tested"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/aggregate.ts:indexHours",
+      "type": "function",
+      "name": "indexHours",
+      "filePath": "src/aggregate.ts",
+      "lineRange": [
+        21,
+        33
+      ],
+      "summary": "indexHours(series) in aggregate.ts, lines 21-33.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/aggregate.ts:assemble",
+      "type": "function",
+      "name": "assemble",
+      "filePath": "src/aggregate.ts",
+      "lineRange": [
+        70,
+        262
+      ],
+      "summary": "assemble(input) in aggregate.ts, lines 70-262.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/app.ts",
+      "type": "file",
+      "name": "app.ts",
+      "filePath": "src/app.ts",
+      "summary": "Page controller. It wires place lookup, the offshore or onshore choice, and the Load 30 days action.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/app.ts:readForm",
+      "type": "function",
+      "name": "readForm",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        61,
+        75
+      ],
+      "summary": "readForm() in app.ts, lines 61-75.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:saveForm",
+      "type": "function",
+      "name": "saveForm",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        77,
+        87
+      ],
+      "summary": "saveForm() in app.ts, lines 77-87.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:restoreForm",
+      "type": "function",
+      "name": "restoreForm",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        89,
+        104
+      ],
+      "summary": "restoreForm() in app.ts, lines 89-104.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:refreshMap",
+      "type": "function",
+      "name": "refreshMap",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        106,
+        120
+      ],
+      "summary": "refreshMap() in app.ts, lines 106-120.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:visibleDays",
+      "type": "function",
+      "name": "visibleDays",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        150,
+        174
+      ],
+      "summary": "visibleDays(snapshot) in app.ts, lines 150-174.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:renderCharts",
+      "type": "function",
+      "name": "renderCharts",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        176,
+        189
+      ],
+      "summary": "renderCharts(snapshot) in app.ts, lines 176-189.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:render",
+      "type": "function",
+      "name": "render",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        191,
+        258
+      ],
+      "summary": "render(snapshot) in app.ts, lines 191-258.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/app.ts:renderHourly",
+      "type": "function",
+      "name": "renderHourly",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        260,
+        280
+      ],
+      "summary": "renderHourly(snapshot) in app.ts, lines 260-280.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:loadSite",
+      "type": "function",
+      "name": "loadSite",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        292,
+        345
+      ],
+      "summary": "loadSite() in app.ts, lines 292-345.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/app.ts:readCache",
+      "type": "function",
+      "name": "readCache",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        347,
+        357
+      ],
+      "summary": "readCache() in app.ts, lines 347-357.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:download",
+      "type": "function",
+      "name": "download",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        359,
+        369
+      ],
+      "summary": "download(filename, contents, type) in app.ts, lines 359-369.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:exportPdf",
+      "type": "function",
+      "name": "exportPdf",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        376,
+        387
+      ],
+      "summary": "exportPdf() in app.ts, lines 376-387.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:findPlace",
+      "type": "function",
+      "name": "findPlace",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        389,
+        428
+      ],
+      "summary": "findPlace() in app.ts, lines 389-428.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/app.ts:boot",
+      "type": "function",
+      "name": "boot",
+      "filePath": "src/app.ts",
+      "lineRange": [
+        443,
+        508
+      ],
+      "summary": "boot() in app.ts, lines 443-508.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/charts.ts",
+      "type": "file",
+      "name": "charts.ts",
+      "filePath": "src/charts.ts",
+      "summary": "Draws the charts shown after a successful load.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/charts.ts:lineChart",
+      "type": "function",
+      "name": "lineChart",
+      "filePath": "src/charts.ts",
+      "lineRange": [
+        3,
+        33
+      ],
+      "summary": "lineChart(values, label) in charts.ts, lines 3-33.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/csv.ts",
+      "type": "file",
+      "name": "csv.ts",
+      "filePath": "src/csv.ts",
+      "summary": "Writes the loaded window as CSV.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/csv.ts:dailyValues",
+      "type": "function",
+      "name": "dailyValues",
+      "filePath": "src/csv.ts",
+      "lineRange": [
+        48,
+        88
+      ],
+      "summary": "dailyValues(row) in csv.ts, lines 48-88.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/csv.ts:hourlyValues",
+      "type": "function",
+      "name": "hourlyValues",
+      "filePath": "src/csv.ts",
+      "lineRange": [
+        90,
+        130
+      ],
+      "summary": "hourlyValues(row) in csv.ts, lines 90-130.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/csv.ts:exportBasename",
+      "type": "function",
+      "name": "exportBasename",
+      "filePath": "src/csv.ts",
+      "lineRange": [
+        132,
+        136
+      ],
+      "summary": "exportBasename(snapshot) in csv.ts, lines 132-136.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/csv.ts:toCsv",
+      "type": "function",
+      "name": "toCsv",
+      "filePath": "src/csv.ts",
+      "lineRange": [
+        138,
+        171
+      ],
+      "summary": "toCsv(snapshot, stale) in csv.ts, lines 138-171.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/format.ts",
+      "type": "file",
+      "name": "format.ts",
+      "filePath": "src/format.ts",
+      "summary": "Formats numbers, times in America/Sao_Paulo, and the Unavailable label.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/format.ts:escapeHtml",
+      "type": "function",
+      "name": "escapeHtml",
+      "filePath": "src/format.ts",
+      "lineRange": [
+        9,
+        11
+      ],
+      "summary": "escapeHtml(value) in format.ts, lines 9-11.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/format.ts:csvField",
+      "type": "function",
+      "name": "csvField",
+      "filePath": "src/format.ts",
+      "lineRange": [
+        13,
+        16
+      ],
+      "summary": "csvField(value) in format.ts, lines 13-16.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/format.ts:fmt",
+      "type": "function",
+      "name": "fmt",
+      "filePath": "src/format.ts",
+      "lineRange": [
+        18,
+        21
+      ],
+      "summary": "fmt(value, digits) in format.ts, lines 18-21.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/format.ts:mean",
+      "type": "function",
+      "name": "mean",
+      "filePath": "src/format.ts",
+      "lineRange": [
+        23,
+        27
+      ],
+      "summary": "mean(values) in format.ts, lines 23-27.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/format.ts:compass",
+      "type": "function",
+      "name": "compass",
+      "filePath": "src/format.ts",
+      "lineRange": [
+        29,
+        34
+      ],
+      "summary": "compass(deg) in format.ts, lines 29-34.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/format.ts:weatherText",
+      "type": "function",
+      "name": "weatherText",
+      "filePath": "src/format.ts",
+      "lineRange": [
+        67,
+        70
+      ],
+      "summary": "weatherText(code) in format.ts, lines 67-70.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/format.ts:isTimeZone",
+      "type": "function",
+      "name": "isTimeZone",
+      "filePath": "src/format.ts",
+      "lineRange": [
+        72,
+        79
+      ],
+      "summary": "isTimeZone(timeZone) in format.ts, lines 72-79.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/format.ts:parseCoord",
+      "type": "function",
+      "name": "parseCoord",
+      "filePath": "src/format.ts",
+      "lineRange": [
+        81,
+        89
+      ],
+      "summary": "parseCoord(raw, kind) in format.ts, lines 81-89.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/map.ts",
+      "type": "file",
+      "name": "map.ts",
+      "filePath": "src/map.ts",
+      "summary": "Draws the site map. Export stays off until Load.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file",
+        "tested"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/map.ts:mapsEmbedUrl",
+      "type": "function",
+      "name": "mapsEmbedUrl",
+      "filePath": "src/map.ts",
+      "lineRange": [
+        8,
+        23
+      ],
+      "summary": "mapsEmbedUrl(lat, lon) in map.ts, lines 8-23.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/map.ts:mapsOpenUrl",
+      "type": "function",
+      "name": "mapsOpenUrl",
+      "filePath": "src/map.ts",
+      "lineRange": [
+        26,
+        31
+      ],
+      "summary": "mapsOpenUrl(lat, lon) in map.ts, lines 26-31.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/openmeteo.ts",
+      "type": "file",
+      "name": "openmeteo.ts",
+      "filePath": "src/openmeteo.ts",
+      "summary": "Calls the Open-Meteo forecast, archive, and marine hosts for the 30-day window.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file",
+        "tested"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/openmeteo.ts:cellSelection",
+      "type": "function",
+      "name": "cellSelection",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        76,
+        80
+      ],
+      "summary": "cellSelection(site) in openmeteo.ts, lines 76-80.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:marineCellSelection",
+      "type": "function",
+      "name": "marineCellSelection",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        83,
+        85
+      ],
+      "summary": "marineCellSelection(site) in openmeteo.ts, lines 83-85.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:forecastUrl",
+      "type": "function",
+      "name": "forecastUrl",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        91,
+        106
+      ],
+      "summary": "forecastUrl(query) in openmeteo.ts, lines 91-106.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:marineUrl",
+      "type": "function",
+      "name": "marineUrl",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        108,
+        120
+      ],
+      "summary": "marineUrl(query, forecastDays) in openmeteo.ts, lines 108-120.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:archiveUrl",
+      "type": "function",
+      "name": "archiveUrl",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        122,
+        135
+      ],
+      "summary": "archiveUrl(query, startDate, endDate) in openmeteo.ts, lines 122-135.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:geocodeUrl",
+      "type": "function",
+      "name": "geocodeUrl",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        137,
+        145
+      ],
+      "summary": "geocodeUrl(name) in openmeteo.ts, lines 137-145.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:errorText",
+      "type": "function",
+      "name": "errorText",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        170,
+        180
+      ],
+      "summary": "errorText(response) in openmeteo.ts, lines 170-180.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:fetchJson",
+      "type": "function",
+      "name": "fetchJson",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        182,
+        200
+      ],
+      "summary": "fetchJson(url, fetchImpl, waitMs) in openmeteo.ts, lines 182-200.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:readSeries",
+      "type": "function",
+      "name": "readSeries",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        211,
+        221
+      ],
+      "summary": "readSeries(block) in openmeteo.ts, lines 211-221.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:parseEndpoint",
+      "type": "function",
+      "name": "parseEndpoint",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        223,
+        246
+      ],
+      "summary": "parseEndpoint(data, url) in openmeteo.ts, lines 223-246.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:fetchEndpoint",
+      "type": "function",
+      "name": "fetchEndpoint",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        248,
+        252
+      ],
+      "summary": "fetchEndpoint(url, fetchImpl) in openmeteo.ts, lines 248-252.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:fetchMarine",
+      "type": "function",
+      "name": "fetchMarine",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        258,
+        267
+      ],
+      "summary": "fetchMarine(query, fetchImpl) in openmeteo.ts, lines 258-267.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/openmeteo.ts:parseGeocode",
+      "type": "function",
+      "name": "parseGeocode",
+      "filePath": "src/openmeteo.ts",
+      "lineRange": [
+        277,
+        300
+      ],
+      "summary": "parseGeocode(data) in openmeteo.ts, lines 277-300.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/report.ts",
+      "type": "file",
+      "name": "report.ts",
+      "filePath": "src/report.ts",
+      "summary": "Source file report.ts (typescript, 123 lines). It defines 3 extracted functions.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/report.ts:dayCells",
+      "type": "function",
+      "name": "dayCells",
+      "filePath": "src/report.ts",
+      "lineRange": [
+        8,
+        32
+      ],
+      "summary": "dayCells(row) in report.ts, lines 8-32.",
+      "tags": [
+        "function",
+        "internal",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/report.ts:reportHtml",
+      "type": "function",
+      "name": "reportHtml",
+      "filePath": "src/report.ts",
+      "lineRange": [
+        34,
+        123
+      ],
+      "summary": "reportHtml(snapshot, selectedDate, stale) in report.ts, lines 34-123.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/satcom.ts",
+      "type": "file",
+      "name": "satcom.ts",
+      "filePath": "src/satcom.ts",
+      "summary": "Condition flags for rain, cloud, gusts, thunderstorms, and offshore sea state. Not a link budget.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file",
+        "tested"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/satcom.ts:conditionFlags",
+      "type": "function",
+      "name": "conditionFlags",
+      "filePath": "src/satcom.ts",
+      "lineRange": [
+        36,
+        62
+      ],
+      "summary": "conditionFlags(input) in satcom.ts, lines 36-62.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/types.ts",
+      "type": "file",
+      "name": "types.ts",
+      "filePath": "src/types.ts",
+      "summary": "Shared types for the weather, marine, and flag records.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/window.ts",
+      "type": "file",
+      "name": "window.ts",
+      "filePath": "src/window.ts",
+      "summary": "Builds the date window: 15 days before today and today through the next 14 days.",
+      "tags": [
+        "source",
+        "typescript",
+        "project-file",
+        "tested"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/window.ts:formatYmd",
+      "type": "function",
+      "name": "formatYmd",
+      "filePath": "src/window.ts",
+      "lineRange": [
+        3,
+        15
+      ],
+      "summary": "formatYmd(date, timeZone) in window.ts, lines 3-15.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/window.ts:addCalendarDays",
+      "type": "function",
+      "name": "addCalendarDays",
+      "filePath": "src/window.ts",
+      "lineRange": [
+        17,
+        24
+      ],
+      "summary": "addCalendarDays(ymd, days) in window.ts, lines 17-24.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/window.ts:windowFor",
+      "type": "function",
+      "name": "windowFor",
+      "filePath": "src/window.ts",
+      "lineRange": [
+        26,
+        31
+      ],
+      "summary": "windowFor(now, timeZone) in window.ts, lines 26-31.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/window.ts:periodOf",
+      "type": "function",
+      "name": "periodOf",
+      "filePath": "src/window.ts",
+      "lineRange": [
+        33,
+        37
+      ],
+      "summary": "periodOf(date, today) in window.ts, lines 33-37.",
+      "tags": [
+        "function",
+        "exported",
+        "typescript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:js/app.js",
+      "type": "file",
+      "name": "app.js",
+      "filePath": "js/app.js",
+      "summary": "Source file app.js (javascript, 505 lines). It defines 24 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:js/app.js:readForm",
+      "type": "function",
+      "name": "readForm",
+      "filePath": "js/app.js",
+      "lineRange": [
+        34,
+        51
+      ],
+      "summary": "readForm() in app.js, lines 34-51.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:saveForm",
+      "type": "function",
+      "name": "saveForm",
+      "filePath": "js/app.js",
+      "lineRange": [
+        52,
+        62
+      ],
+      "summary": "saveForm() in app.js, lines 52-62.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:restoreForm",
+      "type": "function",
+      "name": "restoreForm",
+      "filePath": "js/app.js",
+      "lineRange": [
+        63,
+        80
+      ],
+      "summary": "restoreForm() in app.js, lines 63-80.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:refreshMap",
+      "type": "function",
+      "name": "refreshMap",
+      "filePath": "js/app.js",
+      "lineRange": [
+        81,
+        97
+      ],
+      "summary": "refreshMap() in app.js, lines 81-97.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:kindLabel",
+      "type": "function",
+      "name": "kindLabel",
+      "filePath": "js/app.js",
+      "lineRange": [
+        115,
+        127
+      ],
+      "summary": "kindLabel(kind) in app.js, lines 115-127.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:visibleDays",
+      "type": "function",
+      "name": "visibleDays",
+      "filePath": "js/app.js",
+      "lineRange": [
+        128,
+        164
+      ],
+      "summary": "visibleDays(snapshot) in app.js, lines 128-164.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:renderCharts",
+      "type": "function",
+      "name": "renderCharts",
+      "filePath": "js/app.js",
+      "lineRange": [
+        165,
+        178
+      ],
+      "summary": "renderCharts(snapshot) in app.js, lines 165-178.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:render",
+      "type": "function",
+      "name": "render",
+      "filePath": "js/app.js",
+      "lineRange": [
+        179,
+        244
+      ],
+      "summary": "render(snapshot) in app.js, lines 179-244.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/app.js:renderHourly",
+      "type": "function",
+      "name": "renderHourly",
+      "filePath": "js/app.js",
+      "lineRange": [
+        245,
+        265
+      ],
+      "summary": "renderHourly(snapshot) in app.js, lines 245-265.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:loadSite",
+      "type": "function",
+      "name": "loadSite",
+      "filePath": "js/app.js",
+      "lineRange": [
+        276,
+        334
+      ],
+      "summary": "loadSite() in app.js, lines 276-334.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/app.js:readCache",
+      "type": "function",
+      "name": "readCache",
+      "filePath": "js/app.js",
+      "lineRange": [
+        335,
+        348
+      ],
+      "summary": "readCache() in app.js, lines 335-348.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:download",
+      "type": "function",
+      "name": "download",
+      "filePath": "js/app.js",
+      "lineRange": [
+        349,
+        359
+      ],
+      "summary": "download(filename, contents, type) in app.js, lines 349-359.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:exportPdf",
+      "type": "function",
+      "name": "exportPdf",
+      "filePath": "js/app.js",
+      "lineRange": [
+        365,
+        377
+      ],
+      "summary": "exportPdf() in app.js, lines 365-377.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/app.js:findPlace",
+      "type": "function",
+      "name": "findPlace",
+      "filePath": "js/app.js",
+      "lineRange": [
+        378,
+        418
+      ],
+      "summary": "findPlace() in app.js, lines 378-418.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/app.js:boot",
+      "type": "function",
+      "name": "boot",
+      "filePath": "js/app.js",
+      "lineRange": [
+        430,
+        504
+      ],
+      "summary": "boot() in app.js, lines 430-504.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:js/charts.js",
+      "type": "file",
+      "name": "charts.js",
+      "filePath": "js/charts.js",
+      "summary": "Source file charts.js (javascript, 34 lines). It defines 1 extracted function.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/charts.js:lineChart",
+      "type": "function",
+      "name": "lineChart",
+      "filePath": "js/charts.js",
+      "lineRange": [
+        2,
+        34
+      ],
+      "summary": "lineChart(values, label) in charts.js, lines 2-34.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:js/csv.js",
+      "type": "file",
+      "name": "csv.js",
+      "filePath": "js/csv.js",
+      "summary": "Source file csv.js (javascript, 166 lines). It defines 5 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/csv.js:dailyValues",
+      "type": "function",
+      "name": "dailyValues",
+      "filePath": "js/csv.js",
+      "lineRange": [
+        44,
+        84
+      ],
+      "summary": "dailyValues(row) in csv.js, lines 44-84.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/csv.js:hourlyValues",
+      "type": "function",
+      "name": "hourlyValues",
+      "filePath": "js/csv.js",
+      "lineRange": [
+        85,
+        125
+      ],
+      "summary": "hourlyValues(row) in csv.js, lines 85-125.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/csv.js:exportBasename",
+      "type": "function",
+      "name": "exportBasename",
+      "filePath": "js/csv.js",
+      "lineRange": [
+        126,
+        130
+      ],
+      "summary": "exportBasename(snapshot) in csv.js, lines 126-130.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/csv.js:toCsv",
+      "type": "function",
+      "name": "toCsv",
+      "filePath": "js/csv.js",
+      "lineRange": [
+        131,
+        166
+      ],
+      "summary": "toCsv(snapshot, stale) in csv.js, lines 131-166.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:js/format.js",
+      "type": "file",
+      "name": "format.js",
+      "filePath": "js/format.js",
+      "summary": "Source file format.js (javascript, 90 lines). It defines 8 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/format.js:escapeHtml",
+      "type": "function",
+      "name": "escapeHtml",
+      "filePath": "js/format.js",
+      "lineRange": [
+        8,
+        10
+      ],
+      "summary": "escapeHtml(value) in format.js, lines 8-10.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/format.js:csvField",
+      "type": "function",
+      "name": "csvField",
+      "filePath": "js/format.js",
+      "lineRange": [
+        11,
+        15
+      ],
+      "summary": "csvField(value) in format.js, lines 11-15.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/format.js:fmt",
+      "type": "function",
+      "name": "fmt",
+      "filePath": "js/format.js",
+      "lineRange": [
+        16,
+        20
+      ],
+      "summary": "fmt(value, digits) in format.js, lines 16-20.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/format.js:mean",
+      "type": "function",
+      "name": "mean",
+      "filePath": "js/format.js",
+      "lineRange": [
+        21,
+        26
+      ],
+      "summary": "mean(values) in format.js, lines 21-26.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/format.js:compass",
+      "type": "function",
+      "name": "compass",
+      "filePath": "js/format.js",
+      "lineRange": [
+        27,
+        33
+      ],
+      "summary": "compass(deg) in format.js, lines 27-33.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/format.js:weatherText",
+      "type": "function",
+      "name": "weatherText",
+      "filePath": "js/format.js",
+      "lineRange": [
+        64,
+        68
+      ],
+      "summary": "weatherText(code) in format.js, lines 64-68.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/format.js:isTimeZone",
+      "type": "function",
+      "name": "isTimeZone",
+      "filePath": "js/format.js",
+      "lineRange": [
+        69,
+        77
+      ],
+      "summary": "isTimeZone(timeZone) in format.js, lines 69-77.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/format.js:parseCoord",
+      "type": "function",
+      "name": "parseCoord",
+      "filePath": "js/format.js",
+      "lineRange": [
+        78,
+        90
+      ],
+      "summary": "parseCoord(raw, kind) in format.js, lines 78-90.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:js/map.js",
+      "type": "file",
+      "name": "map.js",
+      "filePath": "js/map.js",
+      "summary": "Source file map.js (javascript, 30 lines). It defines 3 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/map.js:mapsEmbedUrl",
+      "type": "function",
+      "name": "mapsEmbedUrl",
+      "filePath": "js/map.js",
+      "lineRange": [
+        8,
+        22
+      ],
+      "summary": "mapsEmbedUrl(lat, lon) in map.js, lines 8-22.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/map.js:mapsOpenUrl",
+      "type": "function",
+      "name": "mapsOpenUrl",
+      "filePath": "js/map.js",
+      "lineRange": [
+        24,
+        30
+      ],
+      "summary": "mapsOpenUrl(lat, lon) in map.js, lines 24-30.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:js/openmeteo.js",
+      "type": "file",
+      "name": "openmeteo.js",
+      "filePath": "js/openmeteo.js",
+      "summary": "Source file openmeteo.js (javascript, 268 lines). It defines 18 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:js/openmeteo.js:cellSelection",
+      "type": "function",
+      "name": "cellSelection",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        68,
+        74
+      ],
+      "summary": "cellSelection(site) in openmeteo.js, lines 68-74.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:marineCellSelection",
+      "type": "function",
+      "name": "marineCellSelection",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        76,
+        78
+      ],
+      "summary": "marineCellSelection(site) in openmeteo.js, lines 76-78.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:forecastUrl",
+      "type": "function",
+      "name": "forecastUrl",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        82,
+        97
+      ],
+      "summary": "forecastUrl(query) in openmeteo.js, lines 82-97.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:marineUrl",
+      "type": "function",
+      "name": "marineUrl",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        98,
+        110
+      ],
+      "summary": "marineUrl(query, forecastDays) in openmeteo.js, lines 98-110.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:archiveUrl",
+      "type": "function",
+      "name": "archiveUrl",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        111,
+        124
+      ],
+      "summary": "archiveUrl(query, startDate, endDate) in openmeteo.js, lines 111-124.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:geocodeUrl",
+      "type": "function",
+      "name": "geocodeUrl",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        125,
+        133
+      ],
+      "summary": "geocodeUrl(name) in openmeteo.js, lines 125-133.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:errorText",
+      "type": "function",
+      "name": "errorText",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        137,
+        149
+      ],
+      "summary": "errorText(response) in openmeteo.js, lines 137-149.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:fetchJson",
+      "type": "function",
+      "name": "fetchJson",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        150,
+        172
+      ],
+      "summary": "fetchJson(url) in openmeteo.js, lines 150-172.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:readSeries",
+      "type": "function",
+      "name": "readSeries",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        181,
+        193
+      ],
+      "summary": "readSeries(block) in openmeteo.js, lines 181-193.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:parseEndpoint",
+      "type": "function",
+      "name": "parseEndpoint",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        194,
+        220
+      ],
+      "summary": "parseEndpoint(data, url) in openmeteo.js, lines 194-220.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:fetchEndpoint",
+      "type": "function",
+      "name": "fetchEndpoint",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        221,
+        226
+      ],
+      "summary": "fetchEndpoint(url) in openmeteo.js, lines 221-226.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:fetchMarine",
+      "type": "function",
+      "name": "fetchMarine",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        230,
+        242
+      ],
+      "summary": "fetchMarine(query) in openmeteo.js, lines 230-242.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/openmeteo.js:parseGeocode",
+      "type": "function",
+      "name": "parseGeocode",
+      "filePath": "js/openmeteo.js",
+      "lineRange": [
+        243,
+        268
+      ],
+      "summary": "parseGeocode(data) in openmeteo.js, lines 243-268.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:js/report.js",
+      "type": "file",
+      "name": "report.js",
+      "filePath": "js/report.js",
+      "summary": "Source file report.js (javascript, 119 lines). It defines 3 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/report.js:dayCells",
+      "type": "function",
+      "name": "dayCells",
+      "filePath": "js/report.js",
+      "lineRange": [
+        5,
+        29
+      ],
+      "summary": "dayCells(row) in report.js, lines 5-29.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/report.js:reportHtml",
+      "type": "function",
+      "name": "reportHtml",
+      "filePath": "js/report.js",
+      "lineRange": [
+        30,
+        119
+      ],
+      "summary": "reportHtml(snapshot, selectedDate, stale) in report.js, lines 30-119.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/map.test.js",
+      "type": "file",
+      "name": "map.test.js",
+      "filePath": "tests/map.test.js",
+      "summary": "Source file map.test.js (javascript, 45 lines).",
+      "tags": [
+        "source",
+        "test",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/openmeteo.test.js",
+      "type": "file",
+      "name": "openmeteo.test.js",
+      "filePath": "tests/openmeteo.test.js",
+      "summary": "Source file openmeteo.test.js (javascript, 105 lines).",
+      "tags": [
+        "source",
+        "test",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:js/aggregate.js",
+      "type": "file",
+      "name": "aggregate.js",
+      "filePath": "js/aggregate.js",
+      "summary": "Source file aggregate.js (javascript, 248 lines). It defines 8 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/aggregate.js:indexDaily",
+      "type": "function",
+      "name": "indexDaily",
+      "filePath": "js/aggregate.js",
+      "lineRange": [
+        5,
+        16
+      ],
+      "summary": "indexDaily(series) in aggregate.js, lines 5-16.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/aggregate.js:indexHours",
+      "type": "function",
+      "name": "indexHours",
+      "filePath": "js/aggregate.js",
+      "lineRange": [
+        17,
+        31
+      ],
+      "summary": "indexHours(series) in aggregate.js, lines 17-31.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/aggregate.js:hourMap",
+      "type": "function",
+      "name": "hourMap",
+      "filePath": "js/aggregate.js",
+      "lineRange": [
+        32,
+        43
+      ],
+      "summary": "hourMap(series) in aggregate.js, lines 32-43.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/aggregate.js:assemble",
+      "type": "function",
+      "name": "assemble",
+      "filePath": "js/aggregate.js",
+      "lineRange": [
+        66,
+        248
+      ],
+      "summary": "assemble(input) in aggregate.js, lines 66-248.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:js/satcom.js",
+      "type": "file",
+      "name": "satcom.js",
+      "filePath": "js/satcom.js",
+      "summary": "Source file satcom.js (javascript, 43 lines). It defines 2 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/satcom.js:conditionFlags",
+      "type": "function",
+      "name": "conditionFlags",
+      "filePath": "js/satcom.js",
+      "lineRange": [
+        17,
+        43
+      ],
+      "summary": "conditionFlags(input) in satcom.js, lines 17-43.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:js/window.js",
+      "type": "file",
+      "name": "window.js",
+      "filePath": "js/window.js",
+      "summary": "Source file window.js (javascript, 36 lines). It defines 4 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:js/window.js:formatYmd",
+      "type": "function",
+      "name": "formatYmd",
+      "filePath": "js/window.js",
+      "lineRange": [
+        1,
+        14
+      ],
+      "summary": "formatYmd(date, timeZone) in window.js, lines 1-14.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/window.js:addCalendarDays",
+      "type": "function",
+      "name": "addCalendarDays",
+      "filePath": "js/window.js",
+      "lineRange": [
+        15,
+        22
+      ],
+      "summary": "addCalendarDays(ymd, days) in window.js, lines 15-22.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/window.js:windowFor",
+      "type": "function",
+      "name": "windowFor",
+      "filePath": "js/window.js",
+      "lineRange": [
+        23,
+        29
+      ],
+      "summary": "windowFor(now, timeZone) in window.js, lines 23-29.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:js/window.js:periodOf",
+      "type": "function",
+      "name": "periodOf",
+      "filePath": "js/window.js",
+      "lineRange": [
+        30,
+        36
+      ],
+      "summary": "periodOf(date, today) in window.js, lines 30-36.",
+      "tags": [
+        "function",
+        "exported",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/aggregate.test.js",
+      "type": "file",
+      "name": "aggregate.test.js",
+      "filePath": "tests/aggregate.test.js",
+      "summary": "Source file aggregate.test.js (javascript, 147 lines). It defines 3 extracted functions.",
+      "tags": [
+        "source",
+        "test",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/aggregate.test.js:endpoint",
+      "type": "function",
+      "name": "endpoint",
+      "filePath": "tests/aggregate.test.js",
+      "lineRange": [
+        20,
+        31
+      ],
+      "summary": "endpoint(daily) in aggregate.test.js, lines 20-31.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/aggregate.test.js:baseInput",
+      "type": "function",
+      "name": "baseInput",
+      "filePath": "tests/aggregate.test.js",
+      "lineRange": [
+        33,
+        72
+      ],
+      "summary": "baseInput(extra) in aggregate.test.js, lines 33-72.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/export.test.js",
+      "type": "file",
+      "name": "export.test.js",
+      "filePath": "tests/export.test.js",
+      "summary": "Source file export.test.js (javascript, 92 lines). It defines 1 extracted function.",
+      "tags": [
+        "source",
+        "test",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/export.test.js:snapshot",
+      "type": "function",
+      "name": "snapshot",
+      "filePath": "tests/export.test.js",
+      "lineRange": [
+        18,
+        52
+      ],
+      "summary": "snapshot() in export.test.js, lines 18-52.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/satcom.test.js",
+      "type": "file",
+      "name": "satcom.test.js",
+      "filePath": "tests/satcom.test.js",
+      "summary": "Source file satcom.test.js (javascript, 34 lines). It defines 1 extracted function.",
+      "tags": [
+        "source",
+        "test",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/satcom.test.js:input",
+      "type": "function",
+      "name": "input",
+      "filePath": "tests/satcom.test.js",
+      "lineRange": [
+        5,
+        21
+      ],
+      "summary": "input(overrides) in satcom.test.js, lines 5-21.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/window.test.js",
+      "type": "file",
+      "name": "window.test.js",
+      "filePath": "tests/window.test.js",
+      "summary": "Source file window.test.js (javascript, 28 lines).",
+      "tags": [
+        "source",
+        "test",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.agents/skills/clean-user-facing-text/scripts/clean_text.py",
+      "type": "file",
+      "name": "clean_text.py",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/clean_text.py",
+      "summary": "Source file clean_text.py (python, 98 lines). It defines 1 extracted function.",
+      "tags": [
+        "source",
+        "python",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/clean_text.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/clean_text.py",
+      "lineRange": [
+        23,
+        94
+      ],
+      "summary": "main() in clean_text.py, lines 23-94.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "type": "file",
+      "name": "common.py",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "summary": "Source file common.py (python, 565 lines). It defines 21 extracted functions.",
+      "tags": [
+        "source",
+        "python",
+        "project-file"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:eprint",
+      "type": "function",
+      "name": "eprint",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        34,
+        35
+      ],
+      "summary": "eprint() in common.py, lines 34-35.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:_reconfigure_stream",
+      "type": "function",
+      "name": "_reconfigure_stream",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        38,
+        49
+      ],
+      "summary": "_reconfigure_stream(stream, errors) in common.py, lines 38-49.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:_configure_stdio",
+      "type": "function",
+      "name": "_configure_stdio",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        52,
+        55
+      ],
+      "summary": "_configure_stdio() in common.py, lines 52-55.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:looks_binary",
+      "type": "function",
+      "name": "looks_binary",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        103,
+        120
+      ],
+      "summary": "looks_binary(data) in common.py, lines 103-120.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:guard_binary",
+      "type": "function",
+      "name": "guard_binary",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        138,
+        154
+      ],
+      "summary": "guard_binary(data, origin, allow_binary, advice) in common.py, lines 138-154.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:read_text_input",
+      "type": "function",
+      "name": "read_text_input",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        157,
+        192
+      ],
+      "summary": "read_text_input(path, allow_binary, advice) in common.py, lines 157-192.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:_read_stdin_capped",
+      "type": "function",
+      "name": "_read_stdin_capped",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        195,
+        243
+      ],
+      "summary": "_read_stdin_capped(allow_binary, advice) in common.py, lines 195-243.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:write_text_output",
+      "type": "function",
+      "name": "write_text_output",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        246,
+        252
+      ],
+      "summary": "write_text_output(text, path) in common.py, lines 246-252.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:_default_file_mode",
+      "type": "function",
+      "name": "_default_file_mode",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        255,
+        259
+      ],
+      "summary": "_default_file_mode() in common.py, lines 255-259.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:safe_write_bytes",
+      "type": "function",
+      "name": "safe_write_bytes",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        262,
+        291
+      ],
+      "summary": "safe_write_bytes(path, data) in common.py, lines 262-291.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:safe_write_text",
+      "type": "function",
+      "name": "safe_write_text",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        294,
+        295
+      ],
+      "summary": "safe_write_text(path, text) in common.py, lines 294-295.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:is_mutating_action",
+      "type": "function",
+      "name": "is_mutating_action",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        298,
+        316
+      ],
+      "summary": "is_mutating_action(action) in common.py, lines 298-316.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:result_has_changes",
+      "type": "function",
+      "name": "result_has_changes",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        319,
+        339
+      ],
+      "summary": "result_has_changes(result) in common.py, lines 319-339.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:backup_path",
+      "type": "function",
+      "name": "backup_path",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        342,
+        381
+      ],
+      "summary": "backup_path(src) in common.py, lines 342-381.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:subprocess_rlimits",
+      "type": "function",
+      "name": "subprocess_rlimits",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        384,
+        396
+      ],
+      "summary": "subprocess_rlimits() in common.py, lines 384-396.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:emit_json",
+      "type": "function",
+      "name": "emit_json",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        413,
+        415
+      ],
+      "summary": "emit_json(data) in common.py, lines 413-415.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:classify_finding_confidence",
+      "type": "function",
+      "name": "classify_finding_confidence",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        426,
+        513
+      ],
+      "summary": "classify_finding_confidence(finding) in common.py, lines 426-513.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:c2patool_probe_note",
+      "type": "function",
+      "name": "c2patool_probe_note",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        516,
+        541
+      ],
+      "summary": "c2patool_probe_note(tools) in common.py, lines 516-541.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:cleaned_path",
+      "type": "function",
+      "name": "cleaned_path",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        544,
+        546
+      ],
+      "summary": "cleaned_path(src, suffix) in common.py, lines 544-546.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:which",
+      "type": "function",
+      "name": "which",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        549,
+        552
+      ],
+      "summary": "which(cmd) in common.py, lines 549-552.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/common.py:safe_arg",
+      "type": "function",
+      "name": "safe_arg",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "lineRange": [
+        555,
+        565
+      ],
+      "summary": "safe_arg(path) in common.py, lines 555-565.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+      "type": "file",
+      "name": "inspect_text.py",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+      "summary": "Source file inspect_text.py (python, 137 lines). It defines 1 extracted function.",
+      "tags": [
+        "source",
+        "python",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/inspect_text.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+      "lineRange": [
+        19,
+        133
+      ],
+      "summary": "main() in inspect_text.py, lines 19-133.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "type": "file",
+      "name": "score_stylometry.py",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "summary": "Source file score_stylometry.py (python, 538 lines). It defines 9 extracted functions.",
+      "tags": [
+        "source",
+        "python",
+        "project-file"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:extract_sentences",
+      "type": "function",
+      "name": "extract_sentences",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        200,
+        219
+      ],
+      "summary": "extract_sentences(text) in score_stylometry.py, lines 200-219.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:extract_words",
+      "type": "function",
+      "name": "extract_words",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        222,
+        224
+      ],
+      "summary": "extract_words(text) in score_stylometry.py, lines 222-224.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:compute_burstiness",
+      "type": "function",
+      "name": "compute_burstiness",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        227,
+        248
+      ],
+      "summary": "compute_burstiness(sentences) in score_stylometry.py, lines 227-248.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:compute_mattr",
+      "type": "function",
+      "name": "compute_mattr",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        251,
+        276
+      ],
+      "summary": "compute_mattr(words, window_size) in score_stylometry.py, lines 251-276.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:scan_ai_phrases",
+      "type": "function",
+      "name": "scan_ai_phrases",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        279,
+        298
+      ],
+      "summary": "scan_ai_phrases(text) in score_stylometry.py, lines 279-298.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:classify_density",
+      "type": "function",
+      "name": "classify_density",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        301,
+        315
+      ],
+      "summary": "classify_density(score) in score_stylometry.py, lines 301-315.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:score_text_stylometry",
+      "type": "function",
+      "name": "score_text_stylometry",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        318,
+        456
+      ],
+      "summary": "score_text_stylometry(text, path) in score_stylometry.py, lines 318-456.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:print_human_stylometry_report",
+      "type": "function",
+      "name": "print_human_stylometry_report",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        459,
+        499
+      ],
+      "summary": "print_human_stylometry_report(report, explain) in score_stylometry.py, lines 459-499.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        502,
+        534
+      ],
+      "summary": "main() in score_stylometry.py, lines 502-534.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:MarkerMatch",
+      "type": "class",
+      "name": "MarkerMatch",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        146,
+        160
+      ],
+      "summary": "Class MarkerMatch in score_stylometry.py. Methods include to_dict.",
+      "tags": [
+        "class",
+        "python",
+        "type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:StylometryReport",
+      "type": "class",
+      "name": "StylometryReport",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "lineRange": [
+        164,
+        197
+      ],
+      "summary": "Class StylometryReport in score_stylometry.py. Methods include to_dict.",
+      "tags": [
+        "class",
+        "python",
+        "type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "type": "file",
+      "name": "text_unicode.py",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "summary": "Source file text_unicode.py (python, 730 lines). It defines 24 extracted functions.",
+      "tags": [
+        "source",
+        "python",
+        "project-file"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_reserved_ignorable",
+      "type": "function",
+      "name": "_is_reserved_ignorable",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        190,
+        193
+      ],
+      "summary": "_is_reserved_ignorable(cp) in text_unicode.py, lines 190-193.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_noncharacter",
+      "type": "function",
+      "name": "_is_noncharacter",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        201,
+        202
+      ],
+      "summary": "_is_noncharacter(cp) in text_unicode.py, lines 201-202.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_layout_cf_script",
+      "type": "function",
+      "name": "_layout_cf_script",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        253,
+        257
+      ],
+      "summary": "_layout_cf_script(cp) in text_unicode.py, lines 253-257.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_private_use",
+      "type": "function",
+      "name": "_is_private_use",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        264,
+        266
+      ],
+      "summary": "_is_private_use(cp) in text_unicode.py, lines 264-266.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_strip_cp",
+      "type": "function",
+      "name": "_is_strip_cp",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        269,
+        281
+      ],
+      "summary": "_is_strip_cp(cp) in text_unicode.py, lines 269-281.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_strip_kind",
+      "type": "function",
+      "name": "_strip_kind",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        284,
+        300
+      ],
+      "summary": "_strip_kind(cp) in text_unicode.py, lines 284-300.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_emoji_glue",
+      "type": "function",
+      "name": "_is_emoji_glue",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        310,
+        311
+      ],
+      "summary": "_is_emoji_glue(cp) in text_unicode.py, lines 310-311.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_emoji_base",
+      "type": "function",
+      "name": "_is_emoji_base",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        314,
+        333
+      ],
+      "summary": "_is_emoji_base(cp) in text_unicode.py, lines 314-333.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_joining_script",
+      "type": "function",
+      "name": "_joining_script",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        354,
+        365
+      ],
+      "summary": "_joining_script(cp) in text_unicode.py, lines 354-365.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_cjk_ideograph",
+      "type": "function",
+      "name": "_is_cjk_ideograph",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        368,
+        374
+      ],
+      "summary": "_is_cjk_ideograph(cp) in text_unicode.py, lines 368-374.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_mongolian_base",
+      "type": "function",
+      "name": "_is_mongolian_base",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        377,
+        378
+      ],
+      "summary": "_is_mongolian_base(cp) in text_unicode.py, lines 377-378.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_variation_selector",
+      "type": "function",
+      "name": "_is_variation_selector",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        381,
+        382
+      ],
+      "summary": "_is_variation_selector(cp) in text_unicode.py, lines 381-382.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_valid_flag_tag_indices",
+      "type": "function",
+      "name": "_valid_flag_tag_indices",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        385,
+        401
+      ],
+      "summary": "_valid_flag_tag_indices(text) in text_unicode.py, lines 385-401.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_valid_bidi_embedding_indices",
+      "type": "function",
+      "name": "_valid_bidi_embedding_indices",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        404,
+        418
+      ],
+      "summary": "_valid_bidi_embedding_indices(text) in text_unicode.py, lines 404-418.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_mongolian_letter",
+      "type": "function",
+      "name": "_is_mongolian_letter",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        421,
+        422
+      ],
+      "summary": "_is_mongolian_letter(cp) in text_unicode.py, lines 421-422.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_khmer_letter",
+      "type": "function",
+      "name": "_is_khmer_letter",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        425,
+        426
+      ],
+      "summary": "_is_khmer_letter(cp) in text_unicode.py, lines 425-426.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_hangul_jamo",
+      "type": "function",
+      "name": "_is_hangul_jamo",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        429,
+        439
+      ],
+      "summary": "_is_hangul_jamo(cp) in text_unicode.py, lines 429-439.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_glue",
+      "type": "function",
+      "name": "_is_glue",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        442,
+        451
+      ],
+      "summary": "_is_glue(cp) in text_unicode.py, lines 442-451.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_decide",
+      "type": "function",
+      "name": "_decide",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        454,
+        527
+      ],
+      "summary": "_decide(ch, prev_kept, prev_input, next_input, valid_flag_tag, valid_bidi_embedding, normalize_spaces, treat_confusables, strip_emoji_glue, strip_bidi) in text_unicode.py, lines 454-527.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_char_label",
+      "type": "function",
+      "name": "_char_label",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        530,
+        534
+      ],
+      "summary": "_char_label(ch) in text_unicode.py, lines 530-534.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_hit_confidence",
+      "type": "function",
+      "name": "_hit_confidence",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        537,
+        539
+      ],
+      "summary": "_hit_confidence(kind) in text_unicode.py, lines 537-539.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:inspect_text",
+      "type": "function",
+      "name": "inspect_text",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        578,
+        640
+      ],
+      "summary": "inspect_text(text, aggressive, strip_emoji_glue) in text_unicode.py, lines 578-640.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:clean_text",
+      "type": "function",
+      "name": "clean_text",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        643,
+        714
+      ],
+      "summary": "clean_text(text, nfkc, aggressive_homoglyphs, normalize_spaces, strip_emoji_glue, strip_bidi) in text_unicode.py, lines 643-714.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:human_report",
+      "type": "function",
+      "name": "human_report",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        717,
+        730
+      ],
+      "summary": "human_report(report) in text_unicode.py, lines 717-730.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:CharHit",
+      "type": "class",
+      "name": "CharHit",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        543,
+        549
+      ],
+      "summary": "Class CharHit in text_unicode.py. Methods include no listed methods.",
+      "tags": [
+        "class",
+        "python",
+        "type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:TextInspectReport",
+      "type": "class",
+      "name": "TextInspectReport",
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "lineRange": [
+        553,
+        575
+      ],
+      "summary": "Class TextInspectReport in text_unicode.py. Methods include to_dict.",
+      "tags": [
+        "class",
+        "python",
+        "type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/clean-user-facing-text/references/detectors.md",
+      "type": "document",
+      "name": "detectors.md",
+      "filePath": ".agents/skills/clean-user-facing-text/references/detectors.md",
+      "summary": "Documentation file detectors.md (markdown, 156 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/clean-user-facing-text/references/responsible-use.md",
+      "type": "document",
+      "name": "responsible-use.md",
+      "filePath": ".agents/skills/clean-user-facing-text/references/responsible-use.md",
+      "summary": "Documentation file responsible-use.md (markdown, 7 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/clean-user-facing-text/references/watermark-notes.md",
+      "type": "document",
+      "name": "watermark-notes.md",
+      "filePath": ".agents/skills/clean-user-facing-text/references/watermark-notes.md",
+      "summary": "Documentation file watermark-notes.md (markdown, 20 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/clean-user-facing-text/references/writing-in-your-voice.md",
+      "type": "document",
+      "name": "writing-in-your-voice.md",
+      "filePath": ".agents/skills/clean-user-facing-text/references/writing-in-your-voice.md",
+      "summary": "Documentation file writing-in-your-voice.md (markdown, 55 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/remove-ai-marks/references/ethics.md",
+      "type": "document",
+      "name": "ethics.md",
+      "filePath": ".agents/skills/remove-ai-marks/references/ethics.md",
+      "summary": "Documentation file ethics.md (markdown, 32 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/remove-ai-marks/references/how-claude-marks.md",
+      "type": "document",
+      "name": "how-claude-marks.md",
+      "filePath": ".agents/skills/remove-ai-marks/references/how-claude-marks.md",
+      "summary": "Documentation file how-claude-marks.md (markdown, 35 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/remove-ai-marks/references/mark-classes.md",
+      "type": "document",
+      "name": "mark-classes.md",
+      "filePath": ".agents/skills/remove-ai-marks/references/mark-classes.md",
+      "summary": "Documentation file mark-classes.md (markdown, 73 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/remove-ai-marks/references/markdiffusion.md",
+      "type": "document",
+      "name": "markdiffusion.md",
+      "filePath": ".agents/skills/remove-ai-marks/references/markdiffusion.md",
+      "summary": "Documentation file markdiffusion.md (markdown, 80 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/remove-ai-marks/references/removal-matrix.md",
+      "type": "document",
+      "name": "removal-matrix.md",
+      "filePath": ".agents/skills/remove-ai-marks/references/removal-matrix.md",
+      "summary": "Documentation file removal-matrix.md (markdown, 57 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/remove-ai-marks/references/vendor-notes.md",
+      "type": "document",
+      "name": "vendor-notes.md",
+      "filePath": ".agents/skills/remove-ai-marks/references/vendor-notes.md",
+      "summary": "Documentation file vendor-notes.md (markdown, 69 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Describes WeatherMeter: one latitude and longitude, 15 days before today through 14 days ahead, saved as CSV or PDF. Flags mark rain, cloud, gusts, thunderstorms, and offshore sea state. Nothing is fetched until Load 30 days.",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "overview",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "index.html",
+      "summary": "Page shell for the weather and sea-state dashboard.",
+      "tags": [
+        "markup",
+        "html",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "Node manifest for the TypeScript check and node:test suite. The only dev dependency is TypeScript 5.9.2.",
+      "tags": [
+        "configuration",
+        "manifest",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:requirements.txt",
+      "type": "document",
+      "name": "requirements.txt",
+      "filePath": "requirements.txt",
+      "summary": "Notes that serve.py uses the Python standard library only. There is no pip install.",
+      "tags": [
+        "documentation",
+        "project-file",
+        "inventory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "TypeScript compiler settings that emit the js/ modules from src/.",
+      "tags": [
+        "configuration",
+        "json",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:instructions/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "instructions/README.md",
+      "summary": "Documentation file README.md (markdown, 9 lines).",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "overview",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:instructions/open-meteo.md",
+      "type": "document",
+      "name": "open-meteo.md",
+      "filePath": "instructions/open-meteo.md",
+      "summary": "Documentation file open-meteo.md (markdown, 44 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:instructions/run-and-test.md",
+      "type": "document",
+      "name": "run-and-test.md",
+      "filePath": "instructions/run-and-test.md",
+      "summary": "Documentation file run-and-test.md (markdown, 41 lines).",
+      "tags": [
+        "documentation",
+        "test",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:instructions/using-the-page.md",
+      "type": "document",
+      "name": "using-the-page.md",
+      "filePath": "instructions/using-the-page.md",
+      "summary": "Documentation file using-the-page.md (markdown, 78 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:instructions/worktree-lifecycle.md",
+      "type": "document",
+      "name": "worktree-lifecycle.md",
+      "filePath": "instructions/worktree-lifecycle.md",
+      "summary": "Documentation file worktree-lifecycle.md (markdown, 8 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.agents/skills/clean-user-facing-text/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/clean-user-facing-text/SKILL.md",
+      "summary": "Documentation file SKILL.md (markdown, 191 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/graft/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/graft/SKILL.md",
+      "summary": "Documentation file SKILL.md (markdown, 156 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:.agents/skills/remove-ai-marks/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": ".agents/skills/remove-ai-marks/SKILL.md",
+      "summary": "Documentation file SKILL.md (markdown, 379 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:.codex/config.toml",
+      "type": "config",
+      "name": "config.toml",
+      "filePath": ".codex/config.toml",
+      "summary": "Configuration file config.toml (toml, 3 lines).",
+      "tags": [
+        "configuration",
+        "toml",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.codex/hooks.json",
+      "type": "config",
+      "name": "hooks.json",
+      "filePath": ".codex/hooks.json",
+      "summary": "Configuration file hooks.json (json, 59 lines).",
+      "tags": [
+        "configuration",
+        "json",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.github/copilot-instructions.md",
+      "type": "document",
+      "name": "copilot-instructions.md",
+      "filePath": ".github/copilot-instructions.md",
+      "summary": "Documentation file copilot-instructions.md (markdown, 41 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.trail/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": ".trail/README.md",
+      "summary": "Documentation file README.md (markdown, 16 lines).",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "overview",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.trail/hook.cjs",
+      "type": "file",
+      "name": "hook.cjs",
+      "filePath": ".trail/hook.cjs",
+      "summary": "Source file hook.cjs (javascript, 216 lines). It defines 12 extracted functions.",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:.trail/hook.cjs:onPath",
+      "type": "function",
+      "name": "onPath",
+      "filePath": ".trail/hook.cjs",
+      "lineRange": [
+        52,
+        64
+      ],
+      "summary": "onPath() in hook.cjs, lines 52-64.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.trail/hook.cjs:newer",
+      "type": "function",
+      "name": "newer",
+      "filePath": ".trail/hook.cjs",
+      "lineRange": [
+        85,
+        95
+      ],
+      "summary": "newer(a, b) in hook.cjs, lines 85-95.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.trail/hook.cjs:offerTrail",
+      "type": "function",
+      "name": "offerTrail",
+      "filePath": ".trail/hook.cjs",
+      "lineRange": [
+        126,
+        162
+      ],
+      "summary": "offerTrail() in hook.cjs, lines 126-162.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.trail/hook.cjs:liveFiles",
+      "type": "function",
+      "name": "liveFiles",
+      "filePath": ".trail/hook.cjs",
+      "lineRange": [
+        167,
+        201
+      ],
+      "summary": "liveFiles(learnings, files) in hook.cjs, lines 167-201.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:.trail/hook.cjs:flatLine",
+      "type": "function",
+      "name": "flatLine",
+      "filePath": ".trail/hook.cjs",
+      "lineRange": [
+        203,
+        216
+      ],
+      "summary": "flatLine(text, max) in hook.cjs, lines 203-216.",
+      "tags": [
+        "function",
+        "internal",
+        "javascript"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.trail/learnings/2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md",
+      "type": "document",
+      "name": "2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md",
+      "filePath": ".trail/learnings/2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md",
+      "summary": "Documentation file 2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md (markdown, 32 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.trail/learnings/2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md",
+      "type": "document",
+      "name": "2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md",
+      "filePath": ".trail/learnings/2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md",
+      "summary": "Documentation file 2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md (markdown, 36 lines).",
+      "tags": [
+        "documentation",
+        "markdown",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.ua/class.txt",
+      "type": "document",
+      "name": "class.txt",
+      "filePath": ".ua/class.txt",
+      "summary": "Size-class marker for this Understand Anything run. This repo is class full.",
+      "tags": [
+        "documentation",
+        "project-file",
+        "inventory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.ua/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".ua/config.json",
+      "summary": "Understand Anything config. Output language for this run is English.",
+      "tags": [
+        "configuration",
+        "json",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:css/app.css",
+      "type": "file",
+      "name": "app.css",
+      "filePath": "css/app.css",
+      "summary": "Dashboard stylesheet.",
+      "tags": [
+        "markup",
+        "stylesheet",
+        "css"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:deploy/playbook.yml",
+      "type": "config",
+      "name": "playbook.yml",
+      "filePath": "deploy/playbook.yml",
+      "summary": "Configuration file playbook.yml (yaml, 70 lines).",
+      "tags": [
+        "configuration",
+        "yaml",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:deploy/terragrunt.hcl.example",
+      "type": "file",
+      "name": "terragrunt.hcl.example",
+      "filePath": "deploy/terragrunt.hcl.example",
+      "summary": "Source file terragrunt.hcl.example (example, 47 lines).",
+      "tags": [
+        "source",
+        "example",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:deploy/weathermeter.service",
+      "type": "file",
+      "name": "weathermeter.service",
+      "filePath": "deploy/weathermeter.service",
+      "summary": "Source file weathermeter.service (service, 18 lines).",
+      "tags": [
+        "source",
+        "service",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:js/types.js",
+      "type": "file",
+      "name": "types.js",
+      "filePath": "js/types.js",
+      "summary": "Source file types.js (javascript, 1 lines).",
+      "tags": [
+        "source",
+        "javascript",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:serve.py",
+      "type": "file",
+      "name": "serve.py",
+      "filePath": "serve.py",
+      "summary": "Standard-library HTTP server that hosts the static page.",
+      "tags": [
+        "source",
+        "python",
+        "project-file"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:serve.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "serve.py",
+      "lineRange": [
+        31,
+        50
+      ],
+      "summary": "main() in serve.py, lines 31-50.",
+      "tags": [
+        "function",
+        "exported",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:serve.py:Handler",
+      "type": "class",
+      "name": "Handler",
+      "filePath": "serve.py",
+      "lineRange": [
+        15,
+        28
+      ],
+      "summary": "Class Handler in serve.py. Methods include do_GET, do_HEAD.",
+      "tags": [
+        "class",
+        "python",
+        "type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/public-surface.test.js",
+      "type": "file",
+      "name": "public-surface.test.js",
+      "filePath": "tests/public-surface.test.js",
+      "summary": "Source file public-surface.test.js (javascript, 87 lines).",
+      "tags": [
+        "source",
+        "test",
+        "javascript"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/aggregate.ts",
+      "target": "function:src/aggregate.ts:indexHours",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/aggregate.ts",
+      "target": "function:src/aggregate.ts:assemble",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/aggregate.ts",
+      "target": "file:src/format.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/aggregate.ts",
+      "target": "file:src/satcom.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/aggregate.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/aggregate.ts",
+      "target": "file:src/window.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:readForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:saveForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:restoreForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:refreshMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:visibleDays",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:renderCharts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:render",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:renderHourly",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:loadSite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:readCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:download",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:exportPdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:findPlace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "function:src/app.ts:boot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/aggregate.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/charts.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/csv.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/format.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/map.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/openmeteo.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/report.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/window.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/charts.ts",
+      "target": "function:src/charts.ts:lineChart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/charts.ts",
+      "target": "file:src/format.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/csv.ts",
+      "target": "function:src/csv.ts:dailyValues",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/csv.ts",
+      "target": "function:src/csv.ts:hourlyValues",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/csv.ts",
+      "target": "function:src/csv.ts:exportBasename",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/csv.ts",
+      "target": "function:src/csv.ts:toCsv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/csv.ts",
+      "target": "file:src/format.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/csv.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/format.ts",
+      "target": "function:src/format.ts:escapeHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/format.ts",
+      "target": "function:src/format.ts:csvField",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/format.ts",
+      "target": "function:src/format.ts:fmt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/format.ts",
+      "target": "function:src/format.ts:mean",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/format.ts",
+      "target": "function:src/format.ts:compass",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/format.ts",
+      "target": "function:src/format.ts:weatherText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/format.ts",
+      "target": "function:src/format.ts:isTimeZone",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/format.ts",
+      "target": "function:src/format.ts:parseCoord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/map.ts",
+      "target": "function:src/map.ts:mapsEmbedUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/map.ts",
+      "target": "function:src/map.ts:mapsOpenUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:cellSelection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:marineCellSelection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:forecastUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:marineUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:archiveUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:geocodeUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:errorText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:fetchJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:readSeries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:parseEndpoint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:fetchEndpoint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:fetchMarine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "function:src/openmeteo.ts:parseGeocode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/report.ts",
+      "target": "function:src/report.ts:dayCells",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/report.ts",
+      "target": "function:src/report.ts:reportHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/report.ts",
+      "target": "file:src/format.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/report.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/satcom.ts",
+      "target": "function:src/satcom.ts:conditionFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/satcom.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/window.ts",
+      "target": "function:src/window.ts:formatYmd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/window.ts",
+      "target": "function:src/window.ts:addCalendarDays",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/window.ts",
+      "target": "function:src/window.ts:windowFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/window.ts",
+      "target": "function:src/window.ts:periodOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/window.ts",
+      "target": "file:src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:readForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:saveForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:restoreForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:refreshMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:kindLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:visibleDays",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:renderCharts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:render",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:renderHourly",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:loadSite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:readCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:download",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:exportPdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:findPlace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "function:js/app.js:boot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "file:js/aggregate.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "file:js/charts.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "file:js/csv.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "file:js/format.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "file:js/map.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "file:js/openmeteo.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "file:js/report.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/app.js",
+      "target": "file:js/window.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/charts.js",
+      "target": "function:js/charts.js:lineChart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/charts.js",
+      "target": "file:js/format.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/csv.js",
+      "target": "function:js/csv.js:dailyValues",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/csv.js",
+      "target": "function:js/csv.js:hourlyValues",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/csv.js",
+      "target": "function:js/csv.js:exportBasename",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/csv.js",
+      "target": "function:js/csv.js:toCsv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/csv.js",
+      "target": "file:js/format.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/format.js",
+      "target": "function:js/format.js:escapeHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/format.js",
+      "target": "function:js/format.js:csvField",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/format.js",
+      "target": "function:js/format.js:fmt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/format.js",
+      "target": "function:js/format.js:mean",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/format.js",
+      "target": "function:js/format.js:compass",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/format.js",
+      "target": "function:js/format.js:weatherText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/format.js",
+      "target": "function:js/format.js:isTimeZone",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/format.js",
+      "target": "function:js/format.js:parseCoord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/map.js",
+      "target": "function:js/map.js:mapsEmbedUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/map.js",
+      "target": "function:js/map.js:mapsOpenUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:cellSelection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:marineCellSelection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:forecastUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:marineUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:archiveUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:geocodeUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:errorText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:fetchJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:readSeries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:parseEndpoint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:fetchEndpoint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:fetchMarine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/openmeteo.js",
+      "target": "function:js/openmeteo.js:parseGeocode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/report.js",
+      "target": "function:js/report.js:dayCells",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/report.js",
+      "target": "function:js/report.js:reportHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/report.js",
+      "target": "file:js/format.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/map.test.js",
+      "target": "file:js/map.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/openmeteo.test.js",
+      "target": "file:js/format.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/openmeteo.test.js",
+      "target": "file:js/openmeteo.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/aggregate.js",
+      "target": "function:js/aggregate.js:indexDaily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/aggregate.js",
+      "target": "function:js/aggregate.js:indexHours",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/aggregate.js",
+      "target": "function:js/aggregate.js:hourMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/aggregate.js",
+      "target": "function:js/aggregate.js:assemble",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/aggregate.js",
+      "target": "file:js/format.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/aggregate.js",
+      "target": "file:js/satcom.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/aggregate.js",
+      "target": "file:js/window.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:js/satcom.js",
+      "target": "function:js/satcom.js:conditionFlags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/window.js",
+      "target": "function:js/window.js:formatYmd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/window.js",
+      "target": "function:js/window.js:addCalendarDays",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/window.js",
+      "target": "function:js/window.js:windowFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:js/window.js",
+      "target": "function:js/window.js:periodOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/aggregate.test.js",
+      "target": "function:tests/aggregate.test.js:endpoint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/aggregate.test.js",
+      "target": "function:tests/aggregate.test.js:baseInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/aggregate.test.js",
+      "target": "file:js/aggregate.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/aggregate.test.js",
+      "target": "file:js/satcom.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/aggregate.test.js",
+      "target": "file:js/window.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/export.test.js",
+      "target": "function:tests/export.test.js:snapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/export.test.js",
+      "target": "file:js/aggregate.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/export.test.js",
+      "target": "file:js/csv.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/export.test.js",
+      "target": "file:js/report.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/export.test.js",
+      "target": "file:js/window.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/satcom.test.js",
+      "target": "function:tests/satcom.test.js:input",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/satcom.test.js",
+      "target": "file:js/satcom.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/window.test.js",
+      "target": "file:js/window.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/clean_text.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/clean_text.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/clean_text.py",
+      "target": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/clean_text.py",
+      "target": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:eprint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:_reconfigure_stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:_configure_stdio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:looks_binary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:guard_binary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:read_text_input",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:_read_stdin_capped",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:write_text_output",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:_default_file_mode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:safe_write_bytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:safe_write_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:is_mutating_action",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:result_has_changes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:backup_path",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:subprocess_rlimits",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:emit_json",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:classify_finding_confidence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:c2patool_probe_note",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:cleaned_path",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:which",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/common.py:safe_arg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/inspect_text.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+      "target": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+      "target": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+      "target": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:extract_sentences",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:extract_words",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:compute_burstiness",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:compute_mattr",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:scan_ai_phrases",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:classify_density",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:score_text_stylometry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:print_human_stylometry_report",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "class:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:MarkerMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "class:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py:StylometryReport",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "target": "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_reserved_ignorable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_noncharacter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_layout_cf_script",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_private_use",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_strip_cp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_strip_kind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_emoji_glue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_emoji_base",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_joining_script",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_cjk_ideograph",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_mongolian_base",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_variation_selector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_valid_flag_tag_indices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_valid_bidi_embedding_indices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_mongolian_letter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_khmer_letter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_hangul_jamo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_is_glue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_decide",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_char_label",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:_hit_confidence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:inspect_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:clean_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "function:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:human_report",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "class:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:CharHit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "target": "class:.agents/skills/clean-user-facing-text/scripts/text_unicode.py:TextInspectReport",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.trail/hook.cjs",
+      "target": "function:.trail/hook.cjs:onPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.trail/hook.cjs",
+      "target": "function:.trail/hook.cjs:newer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.trail/hook.cjs",
+      "target": "function:.trail/hook.cjs:offerTrail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.trail/hook.cjs",
+      "target": "function:.trail/hook.cjs:liveFiles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:.trail/hook.cjs",
+      "target": "function:.trail/hook.cjs:flatLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:serve.py",
+      "target": "function:serve.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:serve.py",
+      "target": "class:serve.py:Handler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/map.ts",
+      "target": "file:tests/map.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Path-based pairing (deterministic)"
+    },
+    {
+      "source": "file:src/openmeteo.ts",
+      "target": "file:tests/openmeteo.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Path-based pairing (deterministic)"
+    },
+    {
+      "source": "file:src/aggregate.ts",
+      "target": "file:tests/aggregate.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Path-based pairing (deterministic)"
+    },
+    {
+      "source": "file:src/satcom.ts",
+      "target": "file:tests/satcom.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Path-based pairing (deterministic)"
+    },
+    {
+      "source": "file:src/window.ts",
+      "target": "file:tests/window.test.js",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Path-based pairing (deterministic)"
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/clean-user-facing-text/references/detectors.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/clean-user-facing-text/references/responsible-use.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/clean-user-facing-text/references/watermark-notes.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/clean-user-facing-text/references/writing-in-your-voice.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/remove-ai-marks/references/ethics.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/remove-ai-marks/references/how-claude-marks.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/remove-ai-marks/references/mark-classes.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/remove-ai-marks/references/markdiffusion.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/remove-ai-marks/references/removal-matrix.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/remove-ai-marks/references/vendor-notes.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:index.html",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:package.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:requirements.txt",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:tsconfig.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:instructions/README.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:instructions/open-meteo.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:instructions/run-and-test.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:instructions/using-the-page.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:instructions/worktree-lifecycle.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/clean-user-facing-text/SKILL.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/graft/SKILL.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.agents/skills/remove-ai-marks/SKILL.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:.codex/config.toml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:.codex/hooks.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.github/copilot-instructions.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.trail/README.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.trail/learnings/2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.trail/learnings/2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:.ua/class.txt",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:.ua/config.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:css/app.css",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "config:deploy/playbook.yml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:deploy/terragrunt.hcl.example",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:deploy/weathermeter.service",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:js/types.js",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:tests/public-surface.test.js",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.4
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:documentation",
+      "name": "Documentation",
+      "description": "README for the 30-day weather and sea-state page, including what the flags are not.",
+      "nodeIds": [
+        "document:README.md"
+      ]
+    },
+    {
+      "id": "layer:page-shell",
+      "name": "Page shell",
+      "description": "HTML, CSS, and the standard-library server that hosts the dashboard.",
+      "nodeIds": [
+        "file:css/app.css",
+        "file:index.html",
+        "file:serve.py"
+      ]
+    },
+    {
+      "id": "layer:page-logic",
+      "name": "Page logic",
+      "description": "TypeScript sources and the emitted JavaScript for load, charts, map, CSV, PDF, and condition flags.",
+      "nodeIds": [
+        "file:js/aggregate.js",
+        "file:js/app.js",
+        "file:js/charts.js",
+        "file:js/csv.js",
+        "file:js/format.js",
+        "file:js/map.js",
+        "file:js/openmeteo.js",
+        "file:js/report.js",
+        "file:js/satcom.js",
+        "file:js/types.js",
+        "file:js/window.js",
+        "file:src/aggregate.ts",
+        "file:src/app.ts",
+        "file:src/charts.ts",
+        "file:src/csv.ts",
+        "file:src/format.ts",
+        "file:src/map.ts",
+        "file:src/openmeteo.ts",
+        "file:src/report.ts",
+        "file:src/satcom.ts",
+        "file:src/types.ts",
+        "file:src/window.ts"
+      ]
+    },
+    {
+      "id": "layer:tests",
+      "name": "Tests",
+      "description": "node:test checks for aggregation, export, and satcom flags.",
+      "nodeIds": [
+        "file:tests/aggregate.test.js",
+        "file:tests/export.test.js",
+        "file:tests/map.test.js",
+        "file:tests/openmeteo.test.js",
+        "file:tests/public-surface.test.js",
+        "file:tests/satcom.test.js",
+        "file:tests/window.test.js"
+      ]
+    },
+    {
+      "id": "layer:deploy",
+      "name": "Deploy",
+      "description": "Service unit, Terragrunt example, and GitHub workflow for hosting the page.",
+      "nodeIds": [
+        "config:deploy/playbook.yml",
+        "document:.github/copilot-instructions.md",
+        "file:deploy/terragrunt.hcl.example",
+        "file:deploy/weathermeter.service"
+      ]
+    },
+    {
+      "id": "layer:config",
+      "name": "Configuration",
+      "description": "TypeScript config, package manifest, Python note, and this run's Understand Anything config.",
+      "nodeIds": [
+        "config:.ua/config.json",
+        "config:package.json",
+        "config:tsconfig.json",
+        "document:.ua/class.txt"
+      ]
+    },
+    {
+      "id": "layer:agent-notes",
+      "name": "Agent notes",
+      "description": "Local agent skill copies and instruction files that are not the weather runtime.",
+      "nodeIds": [
+        "config:.codex/config.toml",
+        "config:.codex/hooks.json",
+        "document:.agents/skills/clean-user-facing-text/SKILL.md",
+        "document:.agents/skills/clean-user-facing-text/references/detectors.md",
+        "document:.agents/skills/clean-user-facing-text/references/responsible-use.md",
+        "document:.agents/skills/clean-user-facing-text/references/watermark-notes.md",
+        "document:.agents/skills/clean-user-facing-text/references/writing-in-your-voice.md",
+        "document:.agents/skills/graft/SKILL.md",
+        "document:.agents/skills/remove-ai-marks/SKILL.md",
+        "document:.agents/skills/remove-ai-marks/references/ethics.md",
+        "document:.agents/skills/remove-ai-marks/references/how-claude-marks.md",
+        "document:.agents/skills/remove-ai-marks/references/mark-classes.md",
+        "document:.agents/skills/remove-ai-marks/references/markdiffusion.md",
+        "document:.agents/skills/remove-ai-marks/references/removal-matrix.md",
+        "document:.agents/skills/remove-ai-marks/references/vendor-notes.md",
+        "document:instructions/README.md",
+        "document:instructions/open-meteo.md",
+        "document:instructions/run-and-test.md",
+        "document:instructions/using-the-page.md",
+        "document:instructions/worktree-lifecycle.md",
+        "file:.agents/skills/clean-user-facing-text/scripts/clean_text.py",
+        "file:.agents/skills/clean-user-facing-text/scripts/common.py",
+        "file:.agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+        "file:.agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+        "file:.agents/skills/clean-user-facing-text/scripts/text_unicode.py"
+      ]
+    },
+    {
+      "id": "layer:project-notes",
+      "name": "Project notes",
+      "description": "Trail learnings and other markdown that records decisions, not runtime behavior.",
+      "nodeIds": [
+        "document:.trail/README.md",
+        "document:.trail/learnings/2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md",
+        "document:.trail/learnings/2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md",
+        "document:requirements.txt",
+        "file:.trail/hook.cjs"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "What the page does",
+      "description": "The README states the contract. One latitude and longitude. Fifteen days before today and today through the next fourteen days. CSV or PDF after a load. Flags are not a link budget and not a navigation aid. Nothing is fetched until Load 30 days.",
+      "nodeIds": [
+        "document:README.md"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Page shell",
+      "description": "index.html is the dashboard. serve.py hosts it with the Python standard library. requirements.txt says there is no pip install.",
+      "nodeIds": [
+        "file:index.html",
+        "file:serve.py",
+        "document:requirements.txt"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "The 30-day window",
+      "description": "window.ts builds the date range. openmeteo.ts calls the forecast, archive, and marine hosts. aggregate.ts joins the series and leaves a missing value missing.",
+      "nodeIds": [
+        "file:src/window.ts",
+        "file:src/openmeteo.ts",
+        "file:src/aggregate.ts"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Flags and export",
+      "description": "satcom.ts sets rain, cloud, gust, thunderstorm, and offshore sea-state flags. csv.ts writes the loaded window. The controller in app.ts starts the load.",
+      "nodeIds": [
+        "file:src/satcom.ts",
+        "file:src/csv.ts",
+        "file:src/app.ts"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "Emitted JavaScript",
+      "description": "The page runs the files under js/. They are the TypeScript emit. app.js is the runtime twin of app.ts. Read src/ when the two disagree.",
+      "nodeIds": [
+        "file:js/app.js",
+        "file:js/openmeteo.js",
+        "file:js/aggregate.js"
+      ],
+      "languageLesson": "TypeScript here is the source. The browser loads the JavaScript emit. A change in src/ is not live until it is emitted to js/."
+    },
+    {
+      "order": 6,
+      "title": "Tests",
+      "description": "node:test covers aggregation, export, and the satcom flags. package.json is the script entry. TypeScript is the only dev dependency.",
+      "nodeIds": [
+        "file:tests/aggregate.test.js",
+        "file:tests/satcom.test.js",
+        "config:package.json"
+      ]
+    }
+  ]
+}

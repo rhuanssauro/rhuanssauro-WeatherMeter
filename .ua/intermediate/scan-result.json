@@ -1,0 +1,619 @@
+{
+  "name": "rhuanssauro-WeatherMeter",
+  "description": "A personal page that loads weather and sea state for one latitude and longitude. Each load covers the 15 days before today and today through the next 14 days, and the window can be saved as CSV or PDF. Condition flags mark rain, cloud, gusts, thunderstorms, and offshore sea state. They are not a link budget and not a navigation aid. Nothing is fetched until Load 30 days is pressed.",
+  "languages": [
+    "javascript",
+    "typescript",
+    "python",
+    "example",
+    "service"
+  ],
+  "frameworks": [
+    "TypeScript",
+    "Python standard library HTTP server"
+  ],
+  "files": [
+    {
+      "path": ".agents/skills/clean-user-facing-text/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 191,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/clean-user-facing-text/references/detectors.md",
+      "language": "markdown",
+      "sizeLines": 156,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/clean-user-facing-text/references/responsible-use.md",
+      "language": "markdown",
+      "sizeLines": 7,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/clean-user-facing-text/references/watermark-notes.md",
+      "language": "markdown",
+      "sizeLines": 20,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/clean-user-facing-text/references/writing-in-your-voice.md",
+      "language": "markdown",
+      "sizeLines": 55,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/clean-user-facing-text/scripts/clean_text.py",
+      "language": "python",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "language": "python",
+      "sizeLines": 565,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+      "language": "python",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "language": "python",
+      "sizeLines": 538,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "language": "python",
+      "sizeLines": 730,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".agents/skills/graft/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 156,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/remove-ai-marks/SKILL.md",
+      "language": "markdown",
+      "sizeLines": 379,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/remove-ai-marks/references/ethics.md",
+      "language": "markdown",
+      "sizeLines": 32,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/remove-ai-marks/references/how-claude-marks.md",
+      "language": "markdown",
+      "sizeLines": 35,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/remove-ai-marks/references/mark-classes.md",
+      "language": "markdown",
+      "sizeLines": 73,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/remove-ai-marks/references/markdiffusion.md",
+      "language": "markdown",
+      "sizeLines": 80,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/remove-ai-marks/references/removal-matrix.md",
+      "language": "markdown",
+      "sizeLines": 57,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".agents/skills/remove-ai-marks/references/vendor-notes.md",
+      "language": "markdown",
+      "sizeLines": 69,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".codex/config.toml",
+      "language": "toml",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".codex/hooks.json",
+      "language": "json",
+      "sizeLines": 59,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "language": "markdown",
+      "sizeLines": 41,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".trail/README.md",
+      "language": "markdown",
+      "sizeLines": 16,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".trail/hook.cjs",
+      "language": "javascript",
+      "sizeLines": 216,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".trail/learnings/2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md",
+      "language": "markdown",
+      "sizeLines": 32,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".trail/learnings/2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md",
+      "language": "markdown",
+      "sizeLines": 36,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".ua/class.txt",
+      "language": "txt",
+      "sizeLines": 1,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".ua/config.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 92,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "css/app.css",
+      "language": "css",
+      "sizeLines": 284,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "deploy/playbook.yml",
+      "language": "yaml",
+      "sizeLines": 70,
+      "fileCategory": "config"
+    },
+    {
+      "path": "deploy/terragrunt.hcl.example",
+      "language": "example",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "deploy/weathermeter.service",
+      "language": "service",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "index.html",
+      "language": "html",
+      "sizeLines": 229,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "instructions/README.md",
+      "language": "markdown",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "instructions/open-meteo.md",
+      "language": "markdown",
+      "sizeLines": 44,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "instructions/run-and-test.md",
+      "language": "markdown",
+      "sizeLines": 41,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "instructions/using-the-page.md",
+      "language": "markdown",
+      "sizeLines": 78,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "instructions/worktree-lifecycle.md",
+      "language": "markdown",
+      "sizeLines": 8,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "js/aggregate.js",
+      "language": "javascript",
+      "sizeLines": 248,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/app.js",
+      "language": "javascript",
+      "sizeLines": 505,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/charts.js",
+      "language": "javascript",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/csv.js",
+      "language": "javascript",
+      "sizeLines": 166,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/format.js",
+      "language": "javascript",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/map.js",
+      "language": "javascript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/openmeteo.js",
+      "language": "javascript",
+      "sizeLines": 268,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/report.js",
+      "language": "javascript",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/satcom.js",
+      "language": "javascript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/types.js",
+      "language": "javascript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "js/window.js",
+      "language": "javascript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "sizeLines": 13,
+      "fileCategory": "config"
+    },
+    {
+      "path": "requirements.txt",
+      "language": "txt",
+      "sizeLines": 6,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "serve.py",
+      "language": "python",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/aggregate.ts",
+      "language": "typescript",
+      "sizeLines": 262,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/app.ts",
+      "language": "typescript",
+      "sizeLines": 510,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/charts.ts",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/csv.ts",
+      "language": "typescript",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/format.ts",
+      "language": "typescript",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/map.ts",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/openmeteo.ts",
+      "language": "typescript",
+      "sizeLines": 300,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/report.ts",
+      "language": "typescript",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/satcom.ts",
+      "language": "typescript",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/types.ts",
+      "language": "typescript",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/window.ts",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/aggregate.test.js",
+      "language": "javascript",
+      "sizeLines": 147,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/export.test.js",
+      "language": "javascript",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/map.test.js",
+      "language": "javascript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/openmeteo.test.js",
+      "language": "javascript",
+      "sizeLines": 105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/public-surface.test.js",
+      "language": "javascript",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/satcom.test.js",
+      "language": "javascript",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/window.test.js",
+      "language": "javascript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "sizeLines": 16,
+      "fileCategory": "config"
+    }
+  ],
+  "totalFiles": 71,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "moderate",
+  "importMap": {
+    ".agents/skills/clean-user-facing-text/SKILL.md": [],
+    ".agents/skills/clean-user-facing-text/references/detectors.md": [],
+    ".agents/skills/clean-user-facing-text/references/responsible-use.md": [],
+    ".agents/skills/clean-user-facing-text/references/watermark-notes.md": [],
+    ".agents/skills/clean-user-facing-text/references/writing-in-your-voice.md": [],
+    ".agents/skills/clean-user-facing-text/scripts/clean_text.py": [
+      ".agents/skills/clean-user-facing-text/scripts/common.py",
+      ".agents/skills/clean-user-facing-text/scripts/text_unicode.py"
+    ],
+    ".agents/skills/clean-user-facing-text/scripts/common.py": [],
+    ".agents/skills/clean-user-facing-text/scripts/inspect_text.py": [
+      ".agents/skills/clean-user-facing-text/scripts/common.py",
+      ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      ".agents/skills/clean-user-facing-text/scripts/text_unicode.py"
+    ],
+    ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py": [
+      ".agents/skills/clean-user-facing-text/scripts/common.py"
+    ],
+    ".agents/skills/clean-user-facing-text/scripts/text_unicode.py": [],
+    ".agents/skills/graft/SKILL.md": [],
+    ".agents/skills/remove-ai-marks/SKILL.md": [],
+    ".agents/skills/remove-ai-marks/references/ethics.md": [],
+    ".agents/skills/remove-ai-marks/references/how-claude-marks.md": [],
+    ".agents/skills/remove-ai-marks/references/mark-classes.md": [],
+    ".agents/skills/remove-ai-marks/references/markdiffusion.md": [],
+    ".agents/skills/remove-ai-marks/references/removal-matrix.md": [],
+    ".agents/skills/remove-ai-marks/references/vendor-notes.md": [],
+    ".codex/config.toml": [],
+    ".codex/hooks.json": [],
+    ".github/copilot-instructions.md": [],
+    ".trail/README.md": [],
+    ".trail/hook.cjs": [],
+    ".trail/learnings/2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md": [],
+    ".trail/learnings/2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md": [],
+    ".ua/class.txt": [],
+    ".ua/config.json": [],
+    "README.md": [],
+    "css/app.css": [],
+    "deploy/playbook.yml": [],
+    "deploy/terragrunt.hcl.example": [],
+    "deploy/weathermeter.service": [],
+    "index.html": [],
+    "instructions/README.md": [],
+    "instructions/open-meteo.md": [],
+    "instructions/run-and-test.md": [],
+    "instructions/using-the-page.md": [],
+    "instructions/worktree-lifecycle.md": [],
+    "js/aggregate.js": [
+      "js/format.js",
+      "js/satcom.js",
+      "js/window.js"
+    ],
+    "js/app.js": [
+      "js/aggregate.js",
+      "js/charts.js",
+      "js/csv.js",
+      "js/format.js",
+      "js/map.js",
+      "js/openmeteo.js",
+      "js/report.js",
+      "js/window.js"
+    ],
+    "js/charts.js": [
+      "js/format.js"
+    ],
+    "js/csv.js": [
+      "js/format.js"
+    ],
+    "js/format.js": [],
+    "js/map.js": [],
+    "js/openmeteo.js": [],
+    "js/report.js": [
+      "js/format.js"
+    ],
+    "js/satcom.js": [],
+    "js/types.js": [],
+    "js/window.js": [],
+    "package.json": [],
+    "requirements.txt": [],
+    "serve.py": [],
+    "src/aggregate.ts": [
+      "src/format.ts",
+      "src/satcom.ts",
+      "src/types.ts",
+      "src/window.ts"
+    ],
+    "src/app.ts": [
+      "src/aggregate.ts",
+      "src/charts.ts",
+      "src/csv.ts",
+      "src/format.ts",
+      "src/map.ts",
+      "src/openmeteo.ts",
+      "src/report.ts",
+      "src/types.ts",
+      "src/window.ts"
+    ],
+    "src/charts.ts": [
+      "src/format.ts"
+    ],
+    "src/csv.ts": [
+      "src/format.ts",
+      "src/types.ts"
+    ],
+    "src/format.ts": [],
+    "src/map.ts": [],
+    "src/openmeteo.ts": [
+      "src/types.ts"
+    ],
+    "src/report.ts": [
+      "src/format.ts",
+      "src/types.ts"
+    ],
+    "src/satcom.ts": [
+      "src/types.ts"
+    ],
+    "src/types.ts": [],
+    "src/window.ts": [
+      "src/types.ts"
+    ],
+    "tests/aggregate.test.js": [
+      "js/aggregate.js",
+      "js/satcom.js",
+      "js/window.js"
+    ],
+    "tests/export.test.js": [
+      "js/aggregate.js",
+      "js/csv.js",
+      "js/report.js",
+      "js/window.js"
+    ],
+    "tests/map.test.js": [
+      "js/map.js"
+    ],
+    "tests/openmeteo.test.js": [
+      "js/format.js",
+      "js/openmeteo.js"
+    ],
+    "tests/public-surface.test.js": [],
+    "tests/satcom.test.js": [
+      "js/satcom.js"
+    ],
+    "tests/window.test.js": [
+      "js/window.js"
+    ],
+    "tsconfig.json": []
+  },
+  "importResolutions": [],
+  "stats": {
+    "filesScanned": 71,
+    "byCategory": {
+      "docs": 25,
+      "code": 38,
+      "config": 6,
+      "markup": 2
+    },
+    "byLanguage": {
+      "markdown": 23,
+      "python": 6,
+      "toml": 1,
+      "json": 4,
+      "javascript": 19,
+      "txt": 2,
+      "css": 1,
+      "yaml": 1,
+      "example": 1,
+      "service": 1,
+      "html": 1,
+      "typescript": 11
+    }
+  },
+  "contentDigest": "49bc44591dfd7fa2ac3828b61f678fb52bb3f410c52e325a8783865d1075d0d9"
+}

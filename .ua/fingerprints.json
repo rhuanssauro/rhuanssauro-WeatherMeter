@@ -1,0 +1,3692 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "2d73dd2daabbe6ffc022bb575bb2ef2b9768bdbf",
+  "generatedAt": "2026-11-17T21:05:44.830Z",
+  "files": {
+    ".agents/skills/clean-user-facing-text/SKILL.md": {
+      "filePath": ".agents/skills/clean-user-facing-text/SKILL.md",
+      "contentHash": "07ce27ad6e3c25b738285e7087c42364c1738f446b7dd7d2feedb174f6a5c1c3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 192,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/clean-user-facing-text/references/detectors.md": {
+      "filePath": ".agents/skills/clean-user-facing-text/references/detectors.md",
+      "contentHash": "43d4a3b9015d948af22912e99e3014cac8f0e45f4e53a2d1664371f9cd8bd582",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 157,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/clean-user-facing-text/references/responsible-use.md": {
+      "filePath": ".agents/skills/clean-user-facing-text/references/responsible-use.md",
+      "contentHash": "4704b413da87f988d1e0d19905aea30c67297632fdbcf3fdd68cd80edae473fc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/clean-user-facing-text/references/watermark-notes.md": {
+      "filePath": ".agents/skills/clean-user-facing-text/references/watermark-notes.md",
+      "contentHash": "d86af9a187834ecf243f7dd4699e38abd0a935d0ea05a6df485ea4af293930e0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/clean-user-facing-text/references/writing-in-your-voice.md": {
+      "filePath": ".agents/skills/clean-user-facing-text/references/writing-in-your-voice.md",
+      "contentHash": "745089d780c6ed0800165ef76162aba0bff5291fddbc6d048cba2cfa2e3ac954",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 56,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/clean-user-facing-text/scripts/clean_text.py": {
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/clean_text.py",
+      "contentHash": "9f78d6e4eaaebbff42fdf3f7024456e96e986f0cc8f7a7c82c26e51ab37556a0",
+      "functions": [
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 72
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "common",
+          "specifiers": [
+            "backup_path",
+            "cleaned_path",
+            "eprint",
+            "read_text_input",
+            "write_text_output"
+          ]
+        },
+        {
+          "source": "text_unicode",
+          "specifiers": [
+            "clean_text"
+          ]
+        }
+      ],
+      "exports": [
+        "main"
+      ],
+      "totalLines": 99,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/clean-user-facing-text/scripts/common.py": {
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/common.py",
+      "contentHash": "8af6dbea2e1f4bfa6cc5e3ff527305a3fb5a8186d45ad432207887b4dd5df75e",
+      "functions": [
+        {
+          "name": "eprint",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_reconfigure_stream",
+          "params": [
+            "stream",
+            "errors"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "_configure_stdio",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "looks_binary",
+          "params": [
+            "data"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "guard_binary",
+          "params": [
+            "data",
+            "origin",
+            "allow_binary",
+            "advice"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "read_text_input",
+          "params": [
+            "path",
+            "allow_binary",
+            "advice"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 36
+        },
+        {
+          "name": "_read_stdin_capped",
+          "params": [
+            "allow_binary",
+            "advice"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 49
+        },
+        {
+          "name": "write_text_output",
+          "params": [
+            "text",
+            "path"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "_default_file_mode",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "safe_write_bytes",
+          "params": [
+            "path",
+            "data"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 30
+        },
+        {
+          "name": "safe_write_text",
+          "params": [
+            "path",
+            "text"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "is_mutating_action",
+          "params": [
+            "action"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "result_has_changes",
+          "params": [
+            "result"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "backup_path",
+          "params": [
+            "src"
+          ],
+          "returnType": "tuple[Path, bool]",
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "subprocess_rlimits",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "emit_json",
+          "params": [
+            "data"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "classify_finding_confidence",
+          "params": [
+            "finding"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 88
+        },
+        {
+          "name": "c2patool_probe_note",
+          "params": [
+            "tools"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "cleaned_path",
+          "params": [
+            "src",
+            "suffix"
+          ],
+          "returnType": "Path",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "which",
+          "params": [
+            "cmd"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "safe_arg",
+          "params": [
+            "path"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "contextlib",
+          "specifiers": [
+            "contextlib"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "stat",
+          "specifiers": [
+            "stat"
+          ]
+        },
+        {
+          "source": "subprocess",
+          "specifiers": [
+            "subprocess"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "tempfile",
+          "specifiers": [
+            "tempfile"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        }
+      ],
+      "exports": [
+        "eprint",
+        "_reconfigure_stream",
+        "_configure_stdio",
+        "looks_binary",
+        "guard_binary",
+        "read_text_input",
+        "_read_stdin_capped",
+        "write_text_output",
+        "_default_file_mode",
+        "safe_write_bytes",
+        "safe_write_text",
+        "is_mutating_action",
+        "result_has_changes",
+        "backup_path",
+        "subprocess_rlimits",
+        "emit_json",
+        "classify_finding_confidence",
+        "c2patool_probe_note",
+        "cleaned_path",
+        "which",
+        "safe_arg"
+      ],
+      "totalLines": 566,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/clean-user-facing-text/scripts/inspect_text.py": {
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/inspect_text.py",
+      "contentHash": "2459fafa7b142634f98f72c126ed7ec24f42547ba7891c7439b902b7871c63aa",
+      "functions": [
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 115
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "common",
+          "specifiers": [
+            "emit_json",
+            "read_text_input"
+          ]
+        },
+        {
+          "source": "score_stylometry",
+          "specifiers": [
+            "print_human_stylometry_report",
+            "score_text_stylometry"
+          ]
+        },
+        {
+          "source": "text_unicode",
+          "specifiers": [
+            "human_report",
+            "inspect_text"
+          ]
+        }
+      ],
+      "exports": [
+        "main"
+      ],
+      "totalLines": 138,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py": {
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/score_stylometry.py",
+      "contentHash": "57dcbd2cb1ec30a12d44ba47dac29998bf1f0f139703e0921b4642d83b0e774f",
+      "functions": [
+        {
+          "name": "extract_sentences",
+          "params": [
+            "text"
+          ],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "extract_words",
+          "params": [
+            "text"
+          ],
+          "returnType": "list[str]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "compute_burstiness",
+          "params": [
+            "sentences"
+          ],
+          "returnType": "tuple[float, float, float | None]",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "compute_mattr",
+          "params": [
+            "words",
+            "window_size"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "scan_ai_phrases",
+          "params": [
+            "text"
+          ],
+          "returnType": "list[MarkerMatch]",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "classify_density",
+          "params": [
+            "score"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "score_text_stylometry",
+          "params": [
+            "text",
+            "path"
+          ],
+          "returnType": "StylometryReport",
+          "exported": true,
+          "lineCount": 139
+        },
+        {
+          "name": "print_human_stylometry_report",
+          "params": [
+            "report",
+            "explain"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 41
+        },
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 33
+        }
+      ],
+      "classes": [
+        {
+          "name": "MarkerMatch",
+          "methods": [
+            "to_dict"
+          ],
+          "properties": [
+            "phrase",
+            "count",
+            "weight",
+            "samples",
+            "spans"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "StylometryReport",
+          "methods": [
+            "to_dict"
+          ],
+          "properties": [
+            "path",
+            "word_count",
+            "sentence_count",
+            "burstiness_cv",
+            "lexical_diversity",
+            "ai_ngram_density",
+            "matched_markers",
+            "score",
+            "confidence_level",
+            "density_tier",
+            "status",
+            "findings",
+            "notes"
+          ],
+          "exported": true,
+          "lineCount": 34
+        }
+      ],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "math",
+          "specifiers": [
+            "math"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "collections",
+          "specifiers": [
+            "Counter"
+          ]
+        },
+        {
+          "source": "dataclasses",
+          "specifiers": [
+            "dataclass",
+            "field"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Any"
+          ]
+        },
+        {
+          "source": "common",
+          "specifiers": [
+            "classify_finding_confidence",
+            "emit_json",
+            "read_text_input"
+          ]
+        }
+      ],
+      "exports": [
+        "MarkerMatch",
+        "StylometryReport",
+        "extract_sentences",
+        "extract_words",
+        "compute_burstiness",
+        "compute_mattr",
+        "scan_ai_phrases",
+        "classify_density",
+        "score_text_stylometry",
+        "print_human_stylometry_report",
+        "main"
+      ],
+      "totalLines": 539,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/clean-user-facing-text/scripts/text_unicode.py": {
+      "filePath": ".agents/skills/clean-user-facing-text/scripts/text_unicode.py",
+      "contentHash": "ed86ed9715f40e306371731f97bf6f2a63f6a7719674630afac89eb3741bc6fd",
+      "functions": [
+        {
+          "name": "_is_reserved_ignorable",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "_is_noncharacter",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_layout_cf_script",
+          "params": [
+            "cp"
+          ],
+          "returnType": "range | None",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "_is_private_use",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "_is_strip_cp",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "_strip_kind",
+          "params": [
+            "cp"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "_is_emoji_glue",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_is_emoji_base",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "_joining_script",
+          "params": [
+            "cp"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "_is_cjk_ideograph",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "_is_mongolian_base",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_is_variation_selector",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_valid_flag_tag_indices",
+          "params": [
+            "text"
+          ],
+          "returnType": "set[int]",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "_valid_bidi_embedding_indices",
+          "params": [
+            "text"
+          ],
+          "returnType": "set[int]",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "_is_mongolian_letter",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_is_khmer_letter",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_is_hangul_jamo",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "_is_glue",
+          "params": [
+            "cp"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "_decide",
+          "params": [
+            "ch",
+            "prev_kept",
+            "prev_input",
+            "next_input",
+            "valid_flag_tag",
+            "valid_bidi_embedding",
+            "normalize_spaces",
+            "treat_confusables",
+            "strip_emoji_glue",
+            "strip_bidi"
+          ],
+          "returnType": "tuple[str, str, str | None]",
+          "exported": true,
+          "lineCount": 74
+        },
+        {
+          "name": "_char_label",
+          "params": [
+            "ch"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "_hit_confidence",
+          "params": [
+            "kind"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "inspect_text",
+          "params": [
+            "text",
+            "aggressive",
+            "strip_emoji_glue"
+          ],
+          "returnType": "TextInspectReport",
+          "exported": true,
+          "lineCount": 63
+        },
+        {
+          "name": "clean_text",
+          "params": [
+            "text",
+            "nfkc",
+            "aggressive_homoglyphs",
+            "normalize_spaces",
+            "strip_emoji_glue",
+            "strip_bidi"
+          ],
+          "returnType": "tuple[str, dict]",
+          "exported": true,
+          "lineCount": 72
+        },
+        {
+          "name": "human_report",
+          "params": [
+            "report"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "classes": [
+        {
+          "name": "CharHit",
+          "methods": [],
+          "properties": [
+            "codepoint",
+            "char",
+            "label",
+            "count",
+            "kind",
+            "samples"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "TextInspectReport",
+          "methods": [
+            "to_dict"
+          ],
+          "properties": [
+            "length",
+            "suspicious_total",
+            "hits",
+            "notes"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "imports": [
+        {
+          "source": "unicodedata",
+          "specifiers": [
+            "unicodedata"
+          ]
+        },
+        {
+          "source": "collections",
+          "specifiers": [
+            "Counter"
+          ]
+        },
+        {
+          "source": "dataclasses",
+          "specifiers": [
+            "dataclass",
+            "field"
+          ]
+        },
+        {
+          "source": "difflib",
+          "specifiers": [
+            "SequenceMatcher"
+          ]
+        }
+      ],
+      "exports": [
+        "_is_reserved_ignorable",
+        "_is_noncharacter",
+        "_layout_cf_script",
+        "_is_private_use",
+        "_is_strip_cp",
+        "_strip_kind",
+        "_is_emoji_glue",
+        "_is_emoji_base",
+        "_joining_script",
+        "_is_cjk_ideograph",
+        "_is_mongolian_base",
+        "_is_variation_selector",
+        "_valid_flag_tag_indices",
+        "_valid_bidi_embedding_indices",
+        "_is_mongolian_letter",
+        "_is_khmer_letter",
+        "_is_hangul_jamo",
+        "_is_glue",
+        "_decide",
+        "_char_label",
+        "_hit_confidence",
+        "CharHit",
+        "TextInspectReport",
+        "inspect_text",
+        "clean_text",
+        "human_report"
+      ],
+      "totalLines": 731,
+      "hasStructuralAnalysis": true
+    },
+    ".agents/skills/graft/SKILL.md": {
+      "filePath": ".agents/skills/graft/SKILL.md",
+      "contentHash": "bc338fab9fd85c2531f8e06a7f72d835b67428f29b4a5afe8b26f2814e877cf4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 157,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/remove-ai-marks/SKILL.md": {
+      "filePath": ".agents/skills/remove-ai-marks/SKILL.md",
+      "contentHash": "b83e5d953c9cab48230b3b6969498285403185b8c4feddd757b319a02b5a749c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 380,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/remove-ai-marks/references/ethics.md": {
+      "filePath": ".agents/skills/remove-ai-marks/references/ethics.md",
+      "contentHash": "062afecad799b81a250000ac46ce4a5644ef9adb4d9da35609f6bbe49c8109bc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/remove-ai-marks/references/how-claude-marks.md": {
+      "filePath": ".agents/skills/remove-ai-marks/references/how-claude-marks.md",
+      "contentHash": "356eadd9f2141847342c83c526d8e1362e4b6673fac6eb036982e0ced580fcab",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/remove-ai-marks/references/mark-classes.md": {
+      "filePath": ".agents/skills/remove-ai-marks/references/mark-classes.md",
+      "contentHash": "7068cbed56a197b1a6e4c0cc6429a772fabec97ce26177a06ef9d97f77b10d3c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 74,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/remove-ai-marks/references/markdiffusion.md": {
+      "filePath": ".agents/skills/remove-ai-marks/references/markdiffusion.md",
+      "contentHash": "16b02ee5b3d130d418c17e3394fa616dca897ab64f839ee1c2e97bbfacb75c5b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 81,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/remove-ai-marks/references/removal-matrix.md": {
+      "filePath": ".agents/skills/remove-ai-marks/references/removal-matrix.md",
+      "contentHash": "bb8ef39f5ac3a2d4e955ff4d863581936b4bdc93d6aca544e080bb0937b30819",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": false
+    },
+    ".agents/skills/remove-ai-marks/references/vendor-notes.md": {
+      "filePath": ".agents/skills/remove-ai-marks/references/vendor-notes.md",
+      "contentHash": "0aa3e818722be8bf07b2cd187d813e6fbf5d37318abba79f8e5e17e81a9e3eb4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 70,
+      "hasStructuralAnalysis": false
+    },
+    ".codex/config.toml": {
+      "filePath": ".codex/config.toml",
+      "contentHash": "046ad43800735f3b23a6c2d22619101cc001509b1974389284ec62ee94588dad",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": false
+    },
+    ".codex/hooks.json": {
+      "filePath": ".codex/hooks.json",
+      "contentHash": "06cf8149fc39889214e8251599f3a0fe3f7046f51919851c8f55af805387d736",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 60,
+      "hasStructuralAnalysis": false
+    },
+    ".github/copilot-instructions.md": {
+      "filePath": ".github/copilot-instructions.md",
+      "contentHash": "2c851fc2efa612d3780a47a7490c0655c35dd9775ec6c2f8a01274b31e373758",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 42,
+      "hasStructuralAnalysis": false
+    },
+    ".trail/README.md": {
+      "filePath": ".trail/README.md",
+      "contentHash": "771c7c79b1a3829fa9c9bd74b4eca69d9cfb73430fb43b5e8dfd72661d414258",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": false
+    },
+    ".trail/hook.cjs": {
+      "filePath": ".trail/hook.cjs",
+      "contentHash": "3411ca7520ae7f92f21ad3e51f2ca72cad0dee7a5cb04fe16008506e6b2bd7f8",
+      "functions": [
+        {
+          "name": "remembered",
+          "params": [],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "fromPkg",
+          "params": [
+            "base"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "pkgAbove",
+          "params": [
+            "file"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "onPath",
+          "params": [],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "globalRoot",
+          "params": [],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "versionOf",
+          "params": [
+            "distClaude"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "newer",
+          "params": [
+            "a",
+            "b"
+          ],
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "best",
+          "params": [
+            "dirs",
+            "name"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "entry",
+          "params": [
+            "name",
+            "cheapOnly"
+          ],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "offerTrail",
+          "params": [],
+          "exported": false,
+          "lineCount": 37
+        },
+        {
+          "name": "liveFiles",
+          "params": [
+            "learnings",
+            "files"
+          ],
+          "exported": false,
+          "lineCount": 35
+        },
+        {
+          "name": "flatLine",
+          "params": [
+            "text",
+            "max"
+          ],
+          "exported": false,
+          "lineCount": 14
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 217,
+      "hasStructuralAnalysis": true
+    },
+    ".trail/learnings/2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md": {
+      "filePath": ".trail/learnings/2026-11-05-declare-explicit-project-in-ai-memory-rhuan.md",
+      "contentHash": "27168cdeb5904ceb16ec64dbaada5266e4693bcb1b6d763464db26d56dc72627",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    ".trail/learnings/2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md": {
+      "filePath": ".trail/learnings/2026-11-14-weathermeter-security-audit-static-csp-headers-rhuan.md",
+      "contentHash": "7962b564692084231eb8a5360777e12111742c8c16e283a12afb91c3e2544603",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 37,
+      "hasStructuralAnalysis": false
+    },
+    ".ua/class.txt": {
+      "filePath": ".ua/class.txt",
+      "contentHash": "dba543a4750c9dcdff676390cb293b940e1b6836f4729a09aa03c686e55c52b1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    ".ua/config.json": {
+      "filePath": ".ua/config.json",
+      "contentHash": "08d37f20ea0af2233ae24f094723759f952381ecb6dd7f2aaa05ef96e95eae6b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": false
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "c1af2c5be2ae7930474a363b0d4531a059ef85cf6d6023abf6737f3817eff4fc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 93,
+      "hasStructuralAnalysis": false
+    },
+    "css/app.css": {
+      "filePath": "css/app.css",
+      "contentHash": "32ee391cddf55d56010ed791606ebe4bc1034d5ee32f2815286164c3e8d644fd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 285,
+      "hasStructuralAnalysis": false
+    },
+    "deploy/playbook.yml": {
+      "filePath": "deploy/playbook.yml",
+      "contentHash": "27242bc9de4bd5c15df88c86b27e4b0ad3f943fbe4a86e82d86ee1b9fddcb31a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 71,
+      "hasStructuralAnalysis": false
+    },
+    "deploy/terragrunt.hcl.example": {
+      "filePath": "deploy/terragrunt.hcl.example",
+      "contentHash": "f89a2a158960bbfe62f64fe7afac0f450900794bd36d04c8d71187ef06eeceb4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 48,
+      "hasStructuralAnalysis": false
+    },
+    "deploy/weathermeter.service": {
+      "filePath": "deploy/weathermeter.service",
+      "contentHash": "bd437f1c5babb899b92d19f3833f7675249f98eba3f0f08211fb66d0a1df7a9b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": false
+    },
+    "index.html": {
+      "filePath": "index.html",
+      "contentHash": "5385c88a94d61f99f2da5920367d7c3d050b611f928b392ec8a0678bd994d50e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 230,
+      "hasStructuralAnalysis": false
+    },
+    "instructions/README.md": {
+      "filePath": "instructions/README.md",
+      "contentHash": "11899557368ee4b2b8b3db0e1cfb546b7a5cb78028581dda1cdc1b8f03be2401",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": false
+    },
+    "instructions/open-meteo.md": {
+      "filePath": "instructions/open-meteo.md",
+      "contentHash": "6f7a340e7e6e39c7d12e2964e31f0ede7f34ac3affccaf73ddf70ee7c1cc8006",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 45,
+      "hasStructuralAnalysis": false
+    },
+    "instructions/run-and-test.md": {
+      "filePath": "instructions/run-and-test.md",
+      "contentHash": "770e915b7e753cb965dc72684b6547e9be0ce434e952e1d2378d150a540174e1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 42,
+      "hasStructuralAnalysis": false
+    },
+    "instructions/using-the-page.md": {
+      "filePath": "instructions/using-the-page.md",
+      "contentHash": "f542d20fcbbeb81da58c80fd2f776b4afbdf97e26d7525a1ebb4dff4e0f76c75",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 79,
+      "hasStructuralAnalysis": false
+    },
+    "instructions/worktree-lifecycle.md": {
+      "filePath": "instructions/worktree-lifecycle.md",
+      "contentHash": "6b37599d0880f1195143c3d0887ab63d08cd747e74247d3a0b1c3ed54312ff9c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": false
+    },
+    "js/aggregate.js": {
+      "filePath": "js/aggregate.js",
+      "contentHash": "81295e794311f21352ad2b7463e3c1e505ac7d12d09069a8d2fca860b6813505",
+      "functions": [
+        {
+          "name": "indexDaily",
+          "params": [
+            "series"
+          ],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "indexHours",
+          "params": [
+            "series"
+          ],
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "hourMap",
+          "params": [
+            "series"
+          ],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "val",
+          "params": [
+            "row",
+            "key"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "hasCore",
+          "params": [
+            "row"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "column",
+          "params": [
+            "rows",
+            "key"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "aside",
+          "params": [
+            "archived"
+          ],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "assemble",
+          "params": [
+            "input"
+          ],
+          "exported": true,
+          "lineCount": 183
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "mean"
+          ]
+        },
+        {
+          "source": "./satcom.js",
+          "specifiers": [
+            "conditionFlags"
+          ]
+        },
+        {
+          "source": "./window.js",
+          "specifiers": [
+            "periodOf",
+            "windowFor"
+          ]
+        }
+      ],
+      "exports": [
+        "assemble"
+      ],
+      "totalLines": 249,
+      "hasStructuralAnalysis": true
+    },
+    "js/app.js": {
+      "filePath": "js/app.js",
+      "contentHash": "aa0d0a25ec08bdbec2f8f1d0fd4b84ca01dd5cb348b447e97640e95614f75070",
+      "functions": [
+        {
+          "name": "byId",
+          "params": [
+            "id"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "setStatus",
+          "params": [
+            "text"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "siteClass",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "readForm",
+          "params": [],
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "saveForm",
+          "params": [],
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "restoreForm",
+          "params": [],
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "refreshMap",
+          "params": [],
+          "exported": false,
+          "lineCount": 17
+        },
+        {
+          "name": "markDirty",
+          "params": [],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "applyPreset",
+          "params": [],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "kindLabel",
+          "params": [
+            "kind"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "visibleDays",
+          "params": [
+            "snapshot"
+          ],
+          "exported": false,
+          "lineCount": 37
+        },
+        {
+          "name": "renderCharts",
+          "params": [
+            "snapshot"
+          ],
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "render",
+          "params": [
+            "snapshot"
+          ],
+          "exported": false,
+          "lineCount": 66
+        },
+        {
+          "name": "renderHourly",
+          "params": [
+            "snapshot"
+          ],
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "remember",
+          "params": [
+            "snapshot",
+            "stale"
+          ],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "loadSite",
+          "params": [],
+          "exported": false,
+          "lineCount": 59
+        },
+        {
+          "name": "readCache",
+          "params": [],
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "download",
+          "params": [
+            "filename",
+            "contents",
+            "type"
+          ],
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "exportCsv",
+          "params": [],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "exportPdf",
+          "params": [],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "findPlace",
+          "params": [],
+          "exported": false,
+          "lineCount": 41
+        },
+        {
+          "name": "tickClock",
+          "params": [],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "applyTheme",
+          "params": [
+            "theme"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "boot",
+          "params": [],
+          "exported": false,
+          "lineCount": 75
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./aggregate.js",
+          "specifiers": [
+            "assemble"
+          ]
+        },
+        {
+          "source": "./charts.js",
+          "specifiers": [
+            "lineChart"
+          ]
+        },
+        {
+          "source": "./csv.js",
+          "specifiers": [
+            "exportBasename",
+            "toCsv"
+          ]
+        },
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "compass",
+            "escapeHtml",
+            "fmt",
+            "isTimeZone",
+            "parseCoord",
+            "weatherText"
+          ]
+        },
+        {
+          "source": "./map.js",
+          "specifiers": [
+            "mapsEmbedUrl",
+            "mapsOpenUrl"
+          ]
+        },
+        {
+          "source": "./openmeteo.js",
+          "specifiers": [
+            "archiveUrl",
+            "fetchEndpoint",
+            "fetchMarine",
+            "forecastUrl",
+            "geocodeUrl",
+            "marineUrl",
+            "parseGeocode"
+          ]
+        },
+        {
+          "source": "./report.js",
+          "specifiers": [
+            "reportHtml"
+          ]
+        },
+        {
+          "source": "./window.js",
+          "specifiers": [
+            "addCalendarDays",
+            "formatYmd"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 506,
+      "hasStructuralAnalysis": true
+    },
+    "js/charts.js": {
+      "filePath": "js/charts.js",
+      "contentHash": "7ab1e900855bb88edf991638eba8cf707eb2415bf13aa59aa61c846c1b1400e5",
+      "functions": [
+        {
+          "name": "lineChart",
+          "params": [
+            "values",
+            "label"
+          ],
+          "exported": true,
+          "lineCount": 33
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "escapeHtml"
+          ]
+        }
+      ],
+      "exports": [
+        "lineChart"
+      ],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "js/csv.js": {
+      "filePath": "js/csv.js",
+      "contentHash": "9465ed868ca9597178c65c0c34ec2dc35167ecc20579659d453ca7f56740f2e7",
+      "functions": [
+        {
+          "name": "cell",
+          "params": [
+            "value",
+            "digits"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "dailyValues",
+          "params": [
+            "row"
+          ],
+          "exported": false,
+          "lineCount": 41
+        },
+        {
+          "name": "hourlyValues",
+          "params": [
+            "row"
+          ],
+          "exported": false,
+          "lineCount": 41
+        },
+        {
+          "name": "exportBasename",
+          "params": [
+            "snapshot"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "toCsv",
+          "params": [
+            "snapshot",
+            "stale"
+          ],
+          "exported": true,
+          "lineCount": 36
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "csvField",
+            "fmt"
+          ]
+        }
+      ],
+      "exports": [
+        "exportBasename",
+        "toCsv"
+      ],
+      "totalLines": 167,
+      "hasStructuralAnalysis": true
+    },
+    "js/format.js": {
+      "filePath": "js/format.js",
+      "contentHash": "7ec17082457565b4128cd08b6850417cb56d05092edcbe2bbb4c2ccb71642b3b",
+      "functions": [
+        {
+          "name": "escapeHtml",
+          "params": [
+            "value"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "csvField",
+          "params": [
+            "value"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "fmt",
+          "params": [
+            "value",
+            "digits"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "mean",
+          "params": [
+            "values"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "compass",
+          "params": [
+            "deg"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "weatherText",
+          "params": [
+            "code"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "isTimeZone",
+          "params": [
+            "timeZone"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "parseCoord",
+          "params": [
+            "raw",
+            "kind"
+          ],
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "escapeHtml",
+        "csvField",
+        "fmt",
+        "mean",
+        "compass",
+        "weatherText",
+        "isTimeZone",
+        "parseCoord"
+      ],
+      "totalLines": 91,
+      "hasStructuralAnalysis": true
+    },
+    "js/map.js": {
+      "filePath": "js/map.js",
+      "contentHash": "c670d41b1ea362c1a9cde7c617ddff9b78ca5f6feac734d165eb4c8c8978a675",
+      "functions": [
+        {
+          "name": "mapCoord",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "mapsEmbedUrl",
+          "params": [
+            "lat",
+            "lon"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "mapsOpenUrl",
+          "params": [
+            "lat",
+            "lon"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "mapsEmbedUrl",
+        "mapsOpenUrl"
+      ],
+      "totalLines": 31,
+      "hasStructuralAnalysis": true
+    },
+    "js/openmeteo.js": {
+      "filePath": "js/openmeteo.js",
+      "contentHash": "cfedd0f2efabffe2830a69981a7c7a5e351278134467a70da9a81f569d57234e",
+      "functions": [
+        {
+          "name": "cellSelection",
+          "params": [
+            "site"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "marineCellSelection",
+          "params": [
+            "site"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "coord",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "forecastUrl",
+          "params": [
+            "query"
+          ],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "marineUrl",
+          "params": [
+            "query",
+            "forecastDays"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "archiveUrl",
+          "params": [
+            "query",
+            "startDate",
+            "endDate"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "geocodeUrl",
+          "params": [
+            "name"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "sleep",
+          "params": [
+            "ms"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "errorText",
+          "params": [
+            "response"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "fetchJson",
+          "params": [
+            "url"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "asRecord",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "numberOrNull",
+          "params": [
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "readSeries",
+          "params": [
+            "block"
+          ],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "parseEndpoint",
+          "params": [
+            "data",
+            "url"
+          ],
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "fetchEndpoint",
+          "params": [
+            "url"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "horizonRejected",
+          "params": [
+            "error"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "fetchMarine",
+          "params": [
+            "query"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "parseGeocode",
+          "params": [
+            "data"
+          ],
+          "exported": true,
+          "lineCount": 26
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "FORECAST_ORIGIN",
+        "MARINE_ORIGIN",
+        "ARCHIVE_ORIGIN",
+        "GEOCODE_ORIGIN",
+        "WEATHER_DAILY",
+        "WEATHER_HOURLY",
+        "MARINE_DAILY",
+        "MARINE_HOURLY",
+        "ARCHIVE_DAILY",
+        "cellSelection",
+        "marineCellSelection",
+        "forecastUrl",
+        "marineUrl",
+        "archiveUrl",
+        "geocodeUrl",
+        "fetchJson",
+        "parseEndpoint",
+        "fetchEndpoint",
+        "fetchMarine",
+        "parseGeocode"
+      ],
+      "totalLines": 269,
+      "hasStructuralAnalysis": true
+    },
+    "js/report.js": {
+      "filePath": "js/report.js",
+      "contentHash": "6ff27ec4e70a503fcb8b6ef0fe0493929d76c0e7d82177f427243aa263b143fa",
+      "functions": [
+        {
+          "name": "td",
+          "params": [
+            "text"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "dayCells",
+          "params": [
+            "row"
+          ],
+          "exported": false,
+          "lineCount": 25
+        },
+        {
+          "name": "reportHtml",
+          "params": [
+            "snapshot",
+            "selectedDate",
+            "stale"
+          ],
+          "exported": true,
+          "lineCount": 90
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "compass",
+            "escapeHtml",
+            "fmt",
+            "weatherText"
+          ]
+        }
+      ],
+      "exports": [
+        "reportHtml"
+      ],
+      "totalLines": 120,
+      "hasStructuralAnalysis": true
+    },
+    "js/satcom.js": {
+      "filePath": "js/satcom.js",
+      "contentHash": "e37004799b70c88a7f1a2780a8afa47c556fb3f453fe4fabec746e939d5c7d1c",
+      "functions": [
+        {
+          "name": "maxOf",
+          "params": [
+            "values"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "conditionFlags",
+          "params": [
+            "input"
+          ],
+          "exported": true,
+          "lineCount": 27
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "RAIN_DAILY_MM",
+        "RAIN_HOURLY_MM",
+        "HEAVY_RAIN_HOURLY_MM",
+        "CLOUD_MEAN_PCT",
+        "CLOUD_LAYER_PCT",
+        "GUST_KT",
+        "SWELL_M",
+        "WAVE_M",
+        "THUNDER_CODES",
+        "SEA_STATE_TEXT",
+        "conditionFlags"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "js/types.js": {
+      "filePath": "js/types.js",
+      "contentHash": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": true
+    },
+    "js/window.js": {
+      "filePath": "js/window.js",
+      "contentHash": "73bd8ed05c85a7bbc1a0f0b9591d9f16585cea354cb31c8d61f346fd276d246e",
+      "functions": [
+        {
+          "name": "formatYmd",
+          "params": [
+            "date",
+            "timeZone"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "addCalendarDays",
+          "params": [
+            "ymd",
+            "days"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "windowFor",
+          "params": [
+            "now",
+            "timeZone"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "periodOf",
+          "params": [
+            "date",
+            "today"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "formatYmd",
+        "addCalendarDays",
+        "windowFor",
+        "periodOf"
+      ],
+      "totalLines": 37,
+      "hasStructuralAnalysis": true
+    },
+    "package.json": {
+      "filePath": "package.json",
+      "contentHash": "23f54c6fc05a443ce2b9c9009b3308c7781421ee539bfff8a8bb700b6d925dff",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": false
+    },
+    "requirements.txt": {
+      "filePath": "requirements.txt",
+      "contentHash": "e4a9613eb6094fb54a7a857f2dbde2396e3e8cd575eb729dce7a280f8bcaa925",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": false
+    },
+    "serve.py": {
+      "filePath": "serve.py",
+      "contentHash": "b7d5b5979d4b64281debd86c56c853aa3cc560bdfcf800afcdb33258a50ace20",
+      "functions": [
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 20
+        }
+      ],
+      "classes": [
+        {
+          "name": "Handler",
+          "methods": [
+            "do_GET",
+            "do_HEAD"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "http.server",
+          "specifiers": [
+            "http.server"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "socketserver",
+          "specifiers": [
+            "socketserver"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [
+        "Handler",
+        "main"
+      ],
+      "totalLines": 55,
+      "hasStructuralAnalysis": true
+    },
+    "src/aggregate.ts": {
+      "filePath": "src/aggregate.ts",
+      "contentHash": "9aab7bfd16bb376619f103cbb70169b7a0f07be264a0ae83e631def696967530",
+      "functions": [
+        {
+          "name": "indexDaily",
+          "params": [
+            "series"
+          ],
+          "returnType": "Map<string, Row>",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "indexHours",
+          "params": [
+            "series"
+          ],
+          "returnType": "Map<string, Row[]>",
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "hourMap",
+          "params": [
+            "series"
+          ],
+          "returnType": "Map<string, Row>",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "val",
+          "params": [
+            "row",
+            "key"
+          ],
+          "returnType": "number | null",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "hasCore",
+          "params": [
+            "row"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "column",
+          "params": [
+            "rows",
+            "key"
+          ],
+          "returnType": "(number | null)[]",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "aside",
+          "params": [
+            "archived"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "assemble",
+          "params": [
+            "input"
+          ],
+          "returnType": "Snapshot | { error: string }",
+          "exported": true,
+          "lineCount": 193
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "mean"
+          ]
+        },
+        {
+          "source": "./satcom.js",
+          "specifiers": [
+            "conditionFlags"
+          ]
+        },
+        {
+          "source": "./types.js",
+          "specifiers": [
+            "DayRow",
+            "EndpointResult",
+            "HourRow",
+            "NumericSeries",
+            "Query",
+            "Snapshot",
+            "WeatherKind"
+          ]
+        },
+        {
+          "source": "./window.js",
+          "specifiers": [
+            "periodOf",
+            "windowFor"
+          ]
+        }
+      ],
+      "exports": [
+        "assemble"
+      ],
+      "totalLines": 263,
+      "hasStructuralAnalysis": true
+    },
+    "src/app.ts": {
+      "filePath": "src/app.ts",
+      "contentHash": "57ad11fb8ecce1ce0ac7e8c505ad82d3a099efc67efa6aa6104f3ce940366941",
+      "functions": [
+        {
+          "name": "byId",
+          "params": [
+            "id"
+          ],
+          "returnType": "T",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "setStatus",
+          "params": [
+            "text"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "siteClass",
+          "params": [
+            "value"
+          ],
+          "returnType": "SiteClass",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "readForm",
+          "params": [],
+          "returnType": "Query | { error: string }",
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "saveForm",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "restoreForm",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 16
+        },
+        {
+          "name": "refreshMap",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 15
+        },
+        {
+          "name": "markDirty",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "applyPreset",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "kindLabel",
+          "params": [
+            "kind"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "visibleDays",
+          "params": [
+            "snapshot"
+          ],
+          "returnType": "DayRow[]",
+          "exported": false,
+          "lineCount": 25
+        },
+        {
+          "name": "renderCharts",
+          "params": [
+            "snapshot"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "render",
+          "params": [
+            "snapshot"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 68
+        },
+        {
+          "name": "renderHourly",
+          "params": [
+            "snapshot"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "remember",
+          "params": [
+            "snapshot",
+            "stale"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "loadSite",
+          "params": [],
+          "returnType": "Promise<void>",
+          "exported": false,
+          "lineCount": 54
+        },
+        {
+          "name": "readCache",
+          "params": [],
+          "returnType": "SavedLookup | null",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "download",
+          "params": [
+            "filename",
+            "contents",
+            "type"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "exportCsv",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "exportPdf",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "findPlace",
+          "params": [],
+          "returnType": "Promise<void>",
+          "exported": false,
+          "lineCount": 40
+        },
+        {
+          "name": "tickClock",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "applyTheme",
+          "params": [
+            "theme"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "boot",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 66
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./aggregate.js",
+          "specifiers": [
+            "assemble"
+          ]
+        },
+        {
+          "source": "./charts.js",
+          "specifiers": [
+            "lineChart"
+          ]
+        },
+        {
+          "source": "./csv.js",
+          "specifiers": [
+            "exportBasename",
+            "toCsv"
+          ]
+        },
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "compass",
+            "escapeHtml",
+            "fmt",
+            "isTimeZone",
+            "parseCoord",
+            "weatherText"
+          ]
+        },
+        {
+          "source": "./map.js",
+          "specifiers": [
+            "mapsEmbedUrl",
+            "mapsOpenUrl"
+          ]
+        },
+        {
+          "source": "./openmeteo.js",
+          "specifiers": [
+            "archiveUrl",
+            "fetchEndpoint",
+            "fetchMarine",
+            "forecastUrl",
+            "geocodeUrl",
+            "marineUrl",
+            "parseGeocode"
+          ]
+        },
+        {
+          "source": "./report.js",
+          "specifiers": [
+            "reportHtml"
+          ]
+        },
+        {
+          "source": "./types.js",
+          "specifiers": [
+            "DayRow",
+            "Query",
+            "SiteClass",
+            "Snapshot"
+          ]
+        },
+        {
+          "source": "./window.js",
+          "specifiers": [
+            "addCalendarDays",
+            "formatYmd"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 511,
+      "hasStructuralAnalysis": true
+    },
+    "src/charts.ts": {
+      "filePath": "src/charts.ts",
+      "contentHash": "9f533e165a74869de0de1e49ccc63a5bf36dcf7ec730a86cf6b82b8c958b90e9",
+      "functions": [
+        {
+          "name": "lineChart",
+          "params": [
+            "values",
+            "label"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 31
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "escapeHtml"
+          ]
+        }
+      ],
+      "exports": [
+        "lineChart"
+      ],
+      "totalLines": 34,
+      "hasStructuralAnalysis": true
+    },
+    "src/csv.ts": {
+      "filePath": "src/csv.ts",
+      "contentHash": "66f2aad918297a8d2a42cd028fdc368ded8262e69465c2ef4d09d706873610f7",
+      "functions": [
+        {
+          "name": "cell",
+          "params": [
+            "value",
+            "digits"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "dailyValues",
+          "params": [
+            "row"
+          ],
+          "returnType": "string[]",
+          "exported": false,
+          "lineCount": 41
+        },
+        {
+          "name": "hourlyValues",
+          "params": [
+            "row"
+          ],
+          "returnType": "string[]",
+          "exported": false,
+          "lineCount": 41
+        },
+        {
+          "name": "exportBasename",
+          "params": [
+            "snapshot"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "toCsv",
+          "params": [
+            "snapshot",
+            "stale"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 34
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "csvField",
+            "fmt"
+          ]
+        },
+        {
+          "source": "./types.js",
+          "specifiers": [
+            "DayRow",
+            "HourRow",
+            "Snapshot"
+          ]
+        }
+      ],
+      "exports": [
+        "exportBasename",
+        "toCsv"
+      ],
+      "totalLines": 172,
+      "hasStructuralAnalysis": true
+    },
+    "src/format.ts": {
+      "filePath": "src/format.ts",
+      "contentHash": "da1c6fff53be8fa3e9cb484eb290aa50bfc6c1d20aa11294ba451fa68cb7a995",
+      "functions": [
+        {
+          "name": "escapeHtml",
+          "params": [
+            "value"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "csvField",
+          "params": [
+            "value"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "fmt",
+          "params": [
+            "value",
+            "digits"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "mean",
+          "params": [
+            "values"
+          ],
+          "returnType": "number | null",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "compass",
+          "params": [
+            "deg"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "weatherText",
+          "params": [
+            "code"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "isTimeZone",
+          "params": [
+            "timeZone"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "parseCoord",
+          "params": [
+            "raw",
+            "kind"
+          ],
+          "returnType": "number | null",
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "escapeHtml",
+        "csvField",
+        "fmt",
+        "mean",
+        "compass",
+        "weatherText",
+        "isTimeZone",
+        "parseCoord"
+      ],
+      "totalLines": 90,
+      "hasStructuralAnalysis": true
+    },
+    "src/map.ts": {
+      "filePath": "src/map.ts",
+      "contentHash": "c1b6c0b1e155a9ea61dda02c6590834337661abb344669dec5877f25a80305e9",
+      "functions": [
+        {
+          "name": "mapCoord",
+          "params": [
+            "value"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "mapsEmbedUrl",
+          "params": [
+            "lat",
+            "lon"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "mapsOpenUrl",
+          "params": [
+            "lat",
+            "lon"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "mapsEmbedUrl",
+        "mapsOpenUrl"
+      ],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "src/openmeteo.ts": {
+      "filePath": "src/openmeteo.ts",
+      "contentHash": "7c644ce9b5ab0cac117cc68aa95e40bc7395bf843cec65f9341caf6b3d09fc8c",
+      "functions": [
+        {
+          "name": "cellSelection",
+          "params": [
+            "site"
+          ],
+          "returnType": "\"sea\" | \"land\" | \"nearest\"",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "marineCellSelection",
+          "params": [
+            "site"
+          ],
+          "returnType": "\"sea\" | \"nearest\"",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "coord",
+          "params": [
+            "value"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "forecastUrl",
+          "params": [
+            "query"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "marineUrl",
+          "params": [
+            "query",
+            "forecastDays"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "archiveUrl",
+          "params": [
+            "query",
+            "startDate",
+            "endDate"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "geocodeUrl",
+          "params": [
+            "name"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "sleep",
+          "params": [
+            "ms"
+          ],
+          "returnType": "Promise<void>",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "errorText",
+          "params": [
+            "response"
+          ],
+          "returnType": "Promise<string>",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "fetchJson",
+          "params": [
+            "url",
+            "fetchImpl",
+            "waitMs"
+          ],
+          "returnType": "Promise<FetchJsonResult | FetchJsonFailure>",
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "asRecord",
+          "params": [
+            "value"
+          ],
+          "returnType": "Record<string, unknown> | null",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "numberOrNull",
+          "params": [
+            "value"
+          ],
+          "returnType": "number | null",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "readSeries",
+          "params": [
+            "block"
+          ],
+          "returnType": "NumericSeries | null",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "parseEndpoint",
+          "params": [
+            "data",
+            "url"
+          ],
+          "returnType": "EndpointResult",
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "fetchEndpoint",
+          "params": [
+            "url",
+            "fetchImpl"
+          ],
+          "returnType": "Promise<EndpointResult>",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "horizonRejected",
+          "params": [
+            "error"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "fetchMarine",
+          "params": [
+            "query",
+            "fetchImpl"
+          ],
+          "returnType": "Promise<{ result: EndpointResult; forecastDays: number | null }>",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "parseGeocode",
+          "params": [
+            "data"
+          ],
+          "returnType": "GeocodeHit[]",
+          "exported": true,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./types.js",
+          "specifiers": [
+            "EndpointResult",
+            "NumericSeries",
+            "Query",
+            "SiteClass"
+          ]
+        }
+      ],
+      "exports": [
+        "FORECAST_ORIGIN",
+        "MARINE_ORIGIN",
+        "ARCHIVE_ORIGIN",
+        "GEOCODE_ORIGIN",
+        "WEATHER_DAILY",
+        "WEATHER_HOURLY",
+        "MARINE_DAILY",
+        "MARINE_HOURLY",
+        "ARCHIVE_DAILY",
+        "cellSelection",
+        "marineCellSelection",
+        "forecastUrl",
+        "marineUrl",
+        "archiveUrl",
+        "geocodeUrl",
+        "fetchJson",
+        "parseEndpoint",
+        "fetchEndpoint",
+        "fetchMarine",
+        "parseGeocode"
+      ],
+      "totalLines": 301,
+      "hasStructuralAnalysis": true
+    },
+    "src/report.ts": {
+      "filePath": "src/report.ts",
+      "contentHash": "506d86902c838996a1dd0a9e12effccc5cd657b797a6ac3892853259a63e6952",
+      "functions": [
+        {
+          "name": "td",
+          "params": [
+            "text",
+            "extra"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "dayCells",
+          "params": [
+            "row"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 25
+        },
+        {
+          "name": "reportHtml",
+          "params": [
+            "snapshot",
+            "selectedDate",
+            "stale"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 90
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./format.js",
+          "specifiers": [
+            "compass",
+            "escapeHtml",
+            "fmt",
+            "weatherText"
+          ]
+        },
+        {
+          "source": "./types.js",
+          "specifiers": [
+            "DayRow",
+            "Snapshot"
+          ]
+        }
+      ],
+      "exports": [
+        "reportHtml"
+      ],
+      "totalLines": 124,
+      "hasStructuralAnalysis": true
+    },
+    "src/satcom.ts": {
+      "filePath": "src/satcom.ts",
+      "contentHash": "a800d2930dbb7d688086dbfe260fe72c4c7c3d9546f1a23efe9944a4cb357996",
+      "functions": [
+        {
+          "name": "maxOf",
+          "params": [
+            "values"
+          ],
+          "returnType": "number | null",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "conditionFlags",
+          "params": [
+            "input"
+          ],
+          "returnType": "string[]",
+          "exported": true,
+          "lineCount": 27
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./types.js",
+          "specifiers": [
+            "SiteClass"
+          ]
+        }
+      ],
+      "exports": [
+        "RAIN_DAILY_MM",
+        "RAIN_HOURLY_MM",
+        "HEAVY_RAIN_HOURLY_MM",
+        "CLOUD_MEAN_PCT",
+        "CLOUD_LAYER_PCT",
+        "GUST_KT",
+        "SWELL_M",
+        "WAVE_M",
+        "THUNDER_CODES",
+        "SEA_STATE_TEXT",
+        "conditionFlags"
+      ],
+      "totalLines": 63,
+      "hasStructuralAnalysis": true
+    },
+    "src/types.ts": {
+      "filePath": "src/types.ts",
+      "contentHash": "181b93c93325c67e8443e00453055d375a3e5098b8e10ebb3ddaeac22fb69363",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 112,
+      "hasStructuralAnalysis": true
+    },
+    "src/window.ts": {
+      "filePath": "src/window.ts",
+      "contentHash": "9ba5f7a399fbaa8af011ccffc8002734c4430b5fa1a9b2b5f2c5ea930084f2ad",
+      "functions": [
+        {
+          "name": "formatYmd",
+          "params": [
+            "date",
+            "timeZone"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "addCalendarDays",
+          "params": [
+            "ymd",
+            "days"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "windowFor",
+          "params": [
+            "now",
+            "timeZone"
+          ],
+          "returnType": "{ today: string; dates: string[] }",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "periodOf",
+          "params": [
+            "date",
+            "today"
+          ],
+          "returnType": "Period",
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./types.js",
+          "specifiers": [
+            "Period"
+          ]
+        }
+      ],
+      "exports": [
+        "formatYmd",
+        "addCalendarDays",
+        "windowFor",
+        "periodOf"
+      ],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "tests/aggregate.test.js": {
+      "filePath": "tests/aggregate.test.js",
+      "contentHash": "57a60824e7672c958433cde9fa51b9c90072f51ff6dc073c5cea2ed647df669a",
+      "functions": [
+        {
+          "name": "series",
+          "params": [
+            "dates",
+            "values"
+          ],
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "endpoint",
+          "params": [
+            "daily"
+          ],
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "baseInput",
+          "params": [
+            "extra"
+          ],
+          "exported": false,
+          "lineCount": 40
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "../js/aggregate.js",
+          "specifiers": [
+            "assemble"
+          ]
+        },
+        {
+          "source": "../js/satcom.js",
+          "specifiers": [
+            "SEA_STATE_TEXT"
+          ]
+        },
+        {
+          "source": "../js/window.js",
+          "specifiers": [
+            "windowFor"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 148,
+      "hasStructuralAnalysis": true
+    },
+    "tests/export.test.js": {
+      "filePath": "tests/export.test.js",
+      "contentHash": "6f3795c527e65fd0dcddeae7e6b387fcfab4003a2bcd745029d899c1be7df962",
+      "functions": [
+        {
+          "name": "snapshot",
+          "params": [],
+          "exported": false,
+          "lineCount": 35
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "../js/aggregate.js",
+          "specifiers": [
+            "assemble"
+          ]
+        },
+        {
+          "source": "../js/csv.js",
+          "specifiers": [
+            "toCsv"
+          ]
+        },
+        {
+          "source": "../js/report.js",
+          "specifiers": [
+            "reportHtml"
+          ]
+        },
+        {
+          "source": "../js/window.js",
+          "specifiers": [
+            "windowFor"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 93,
+      "hasStructuralAnalysis": true
+    },
+    "tests/map.test.js": {
+      "filePath": "tests/map.test.js",
+      "contentHash": "6e64b9e66bc1225be823b2425de27644d70c051e263bcf9beb2061022a59f79a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readdirSync",
+            "readFileSync"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "../js/map.js",
+          "specifiers": [
+            "mapsEmbedUrl",
+            "mapsOpenUrl"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    "tests/openmeteo.test.js": {
+      "filePath": "tests/openmeteo.test.js",
+      "contentHash": "057a03207bba2d04ff75ba340adb0e035548e3a021b6a4a6989aa39e3632876e",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "../js/openmeteo.js",
+          "specifiers": [
+            "archiveUrl",
+            "fetchJson",
+            "fetchMarine",
+            "forecastUrl",
+            "geocodeUrl",
+            "marineUrl",
+            "parseEndpoint"
+          ]
+        },
+        {
+          "source": "../js/format.js",
+          "specifiers": [
+            "parseCoord"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 106,
+      "hasStructuralAnalysis": true
+    },
+    "tests/public-surface.test.js": {
+      "filePath": "tests/public-surface.test.js",
+      "contentHash": "6983f87d7c5430ca795c58864947ea8fb52d606b2b44534d51824a7eb86dc14f",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "execFileSync"
+          ]
+        },
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "existsSync",
+            "readFileSync"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    "tests/satcom.test.js": {
+      "filePath": "tests/satcom.test.js",
+      "contentHash": "a88270416625b08530615d9ddedd77e28ca981bef9168947ca85488ae80bc903",
+      "functions": [
+        {
+          "name": "input",
+          "params": [
+            "overrides"
+          ],
+          "exported": false,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "../js/satcom.js",
+          "specifiers": [
+            "conditionFlags",
+            "SEA_STATE_TEXT"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "tests/window.test.js": {
+      "filePath": "tests/window.test.js",
+      "contentHash": "c58288e22b327534432ed93765f8fa90f3f3597429916fa16926e1c8268ba854",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "../js/window.js",
+          "specifiers": [
+            "addCalendarDays",
+            "periodOf",
+            "windowFor"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "tsconfig.json": {
+      "filePath": "tsconfig.json",
+      "contentHash": "d3da67368e57026d5f2d321a60dc170109465ac3a7d3450ebc958f31e536be25",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": false
+    }
+  }
+}
